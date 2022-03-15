@@ -1,4 +1,5 @@
 firebase.json
+.firebaserc
 package-lock.json
 Archive/
 node_modules/
