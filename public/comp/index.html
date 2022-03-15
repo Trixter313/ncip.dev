@@ -1,0 +1,172 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Animal Products</title>
+  <link rel="icon" sizes="192x192" href="images/favicon.png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta id="chromeTheme" name="theme-color" content="#388e3c">
+</head>
+<body ng-app="myApp" ng-cloak>
+	<md-toolbar layout="row" layout-align="start center" hide-sm hide-xs flex class="md-tall md-primary">
+		<h3 style="padding-left:40px" class="md-display-1">The Reduction of Animal Product Consumption</h3>
+		<span flex></span>
+		<p style="padding-right: 10px">Information Credit: <a href="https://awfw.org">A Well-Fed World</a></p>
+	</md-toolbar>
+	<md-tabs md-dynamic-height md-border-bottom md-no-pagination class="md-accent">
+		<md-tab label="Background">
+			<md-content class="md-padding">
+				<md-content layout-xs="column" layout="row" layout-align="center">
+					<div flex-gt-sm="40" flex-md="60" flex-lg="52">
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:150px; color:#00e676">language</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Background Knowledge</h4>
+								<p class="md-body-1">Some information on why reducing your animal product consumption might be worthwhile! Food is one of the largest ways that animal products are consumed, so we focus on that category of consumption here.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Environmental Impact</h4>
+								<p class="md-body-1"><b>The livestock sector generates more greenhouse gasses (GHG) that all transportation combined.</b> This is important because GHGs are a classification of gasses that, when built up, allow heat into the atmosphere but do not equally let heat out, causing a net increase in the temperature of our planet.</p>
+								<md-divider></md-divider>
+								<p class="md-body-1"><b>Livestock account for 37% of human-related methane production.</b> Methane is one of the worse GHGs meaning it has a higher global warming potential that other GHGs. Methane is considered to be between 20-28 times stronger than carbon dioxide.</p>
+								<md-divider></md-divider>
+								<p class="md-body-1"><b>Animals are very inefficient converters of calories.</b> They consume many more calories than they produce through animal agriculture. Chickens produce ~11% of the calories inputted, pigs ~10%, and cows at a mere ~1%.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Animal Welfare Impact</h4>
+								<p class="md-body-1"><b>Around 9 billion land animals are killed each year in the US alone</b>, coming out to about one million every hour - in just the US!</p>
+								<md-divider></md-divider>
+								<p class="md-body-1"><b>Globally, the death toll exceeds 70 billion per year.</b> That means that ~133,000 animals are killed every minute.</p>
+								<md-divider></md-divider>
+								<p class="md-body-1"><b>The number of aquatic animals killed for food per year is in the trillions.</b> Due to the small size of the majority of aquatic animals consumed for food, it takes many more lives to feed one person compared to other animal products.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:200px; color:#00e676">search</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Method of examining</h4>
+								<p class="md-body-1"><b>This website uses an economics point of view.</b> Essentially, every transaction has an analysis of utility gained versus cost. The tabs on this website explore some utilities gained and costs associated with the purchase of food and explanations on how we can use these to our advantage to make an animal product reducing meal more likely to be chosen.</p>
+							</md-card-content>
+						</md-card>
+					</div>
+				</md-content>
+			</md-content>
+		</md-tab>
+		<md-tab label="Utility Gained">
+			<md-content class="md-padding">
+				<md-content layout-xs="column" layout="row" layout-align="center">
+					<div flex-gt-sm="40" flex-md="60" flex-lg="52">
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">sentiment_very_satisfied</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Enjoyment of Food</h4>
+								<p class="md-body-1"><b>Obviously, how much someone enjoy's a certain food is a big factor in their decision to purchase it.</b> To make sure that a food option that reduces animal product consumption is chosen, the food has to be enjoyable and similar enough to another option that doesn't reduce consumption that a customer doesn't feel that they are losing utility by choosing it.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">favorite</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Sentimental Associations</h4>
+								<p class="md-body-1"><b>Food is very close to the heart for many.</b> It can bring back memories from someone's childhood and it's because of this that many people prefer eating food like what they grew up with. In my research it came up multiple times that people want a wide variety of cultural foods to choose from on campus, so ensuring many bases are covered in that area will be crucial to the success of a food option.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">timer</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Quick Preparation</h4>
+								<p class="md-body-1"><b>Students cited the time it takes to get the food as their second highest criteria in determining what food to eat.</b> This means that to make the food option as accessible and desirable as possible, having some quickly prepared options available is crucial.</p>
+							</md-card-content>
+						</md-card>
+					</div>
+				</md-content>
+			</md-content>
+		</md-tab>
+		<md-tab label="Costs Incurred">
+			<md-content class="md-padding">
+				<md-content layout-xs="column" layout="row" layout-align="center">
+					<div flex-gt-sm="40" flex-md="60" flex-lg="52">
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">monetization_on</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Monetary Costs</h4>
+								<p class="md-body-1"><b>By far, the number one reason students cited as how they choose what to eat is the affordability of the food.</b> Especially so on a college campus, the people looking to buy food aren't looking to spend a ton on it. If you want an alternative that reduces animal product consumption to sell, it has to be the same cost or less than the default option.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">hourglass_empty</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Time Costs</h4>
+								<p class="md-body-1"><b>Students cited the time it takes to get the food as their second highest criteria in determining what food to eat.</b> This means that to make the food option as accessible and desirable as possible, having some quickly prepared options available is crucial.</p>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<i class="material-icons" style="font-size:175px; color:#00e676">directions_walk</i>
+							</md-card-header>
+							<md-divider></md-divider>
+							<md-card-content>
+								<h4 class="md-headline" style="margin-bottom:0px">Travel Costs</h4>
+								<p class="md-body-1"><b>Students are often going between classes, so having ptions that are close by is very important to them.</b> Making sure to minimize travel required to purchase the alternative option so that it is as accessible as possible is very important. This can be achieved by making sure that there is at least one option available at every restaraunt that reduces animal product consumption - with more than one being preferable, of course.</p>
+							</md-card-content>
+						</md-card>
+					</div>
+				</md-content>
+			</md-content>
+		</md-tab>
+	</md-tabs>
+	<md-button class="md-fab" ng-href="mailto:suggestions@ncipriani.com" target="_blank" style="position:fixed; right:21px; bottom:10px" aria-label="Email">
+		<md-icon class="fab-icon">email</md-icon>
+	</md-button>
+	<!-- Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+	<!-- Bootstrap  -->
+	<script type="text/javascript">
+		angular.module('myApp', ['ngMaterial'])
+			.config(function($mdThemingProvider) {
+				$mdThemingProvider.theme('default')
+				.primaryPalette('green', {
+					'default': 'A400'
+				})
+				.accentPalette('green', {
+					'default': '700'
+				})
+			});
+	</script>
+</body>
+</html>

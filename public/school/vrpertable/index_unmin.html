@@ -1,0 +1,721 @@
+<html>
+<head>
+	<title>VR Periodic Table</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-59484438-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<a-scene>
+		<a-assets>
+		<img id="wrapImage" src="CreightonClassroomTrial.jpg">
+		</a-assets>
+
+		<a-camera>
+		<a-entity cursor="fuse: true; fuseTimeout: .1" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.00001; radiusOuter: 0.007;" material="color: #e0e0e0; shader: flat;"></a-entity>
+		</a-camera>
+
+		<a-sky visible="true" src="#wrapImage"></a-sky>
+
+		<!-- Begin tiles -->
+
+		<a-box id="titleTile" color="#b6e3ff" depth=".07" height="1.3" width="8.7" position="0 5.7 -8"></a-box>
+		<a-box id="welcomeTile" color="#b6e3ff" depth=".07" height="5.5" width="10" position="-12 1 0" rotation="0 90 0"></a-box>
+
+		<a-box id="hTile" class="group1" depth=".07" color="#bdbdbd" position="-9.35 4.6 -8"></a-box>
+		<a-box id="liTile" class="alkali group1" position="-9.35 3.5 -8"></a-box>
+		<a-box id="naTile" class="alkali group1" position="-9.35 2.4 -8"></a-box>
+		<a-box id="kTile" class="alkali group1" position="-9.35 1.3 -8"></a-box>
+		<a-box id="rbTile" class="alkali group1" position="-9.35 0.2 -8"></a-box>
+		<a-box id="csTile" class="alkali group1" position="-9.35 -0.9 -8"></a-box>
+		<a-box id="frTile" class="alkali group1" position="-9.35 -2.0 -8"></a-box>
+
+		<a-box id="beTile" class="alkaline group2" position="-8.25 3.5 -8"></a-box>
+		<a-box id="mgTile" class="alkaline group2" position="-8.25 2.4 -8"></a-box>
+		<a-box id="caTile" class="alkaline group2" position="-8.25 1.3 -8"></a-box>
+		<a-box id="srTile" class="alkaline group2" position="-8.25 0.2 -8"></a-box>
+		<a-box id="baTile" class="alkaline group2" position="-8.25 -0.9 -8"></a-box>
+		<a-box id="raTile" class="alkaline group2" position="-8.25 -2.0 -8"></a-box>
+
+		<a-box id="scTile" class="trans group3" position="-7.15 1.3 -8"></a-box>
+		<a-box id="yTile" class="trans group3" position="-7.15 0.2 -8"></a-box>
+		<a-box id="57Tile" class="trans group3" position="-7.15 -0.9 -8"></a-box>
+		<a-box id="89Tile" class="trans group3" position="-7.15 -2.0 -8"></a-box>
+
+		<a-box id="tiTile" class="trans group4" position="-6.05 1.3 -8"></a-box>
+		<a-box id="zrTile" class="trans group4" position="-6.05 0.2 -8"></a-box>
+		<a-box id="hfTile" class="trans group4" position="-6.05 -0.9 -8"></a-box>
+		<a-box id="rfTile" class="trans group4" position="-6.05 -2.0 -8"></a-box>
+
+		<a-box id="vTile" class="trans group5" position="-4.95 1.3 -8"></a-box>
+		<a-box id="nbTile" class="trans group5" position="-4.95 0.2 -8"></a-box>
+		<a-box id="taTile" class="trans group5" position="-4.95 -0.9 -8"></a-box>
+		<a-box id="dbTile" class="trans group5" position="-4.95 -2.0 -8"></a-box>
+
+		<a-box id="crTile" class="trans group6" position="-3.85 1.3 -8"></a-box>
+		<a-box id="moTile" class="trans group6" position="-3.85 0.2 -8"></a-box>
+		<a-box id="wTile" class="trans group6" position="-3.85 -0.9 -8"></a-box>
+		<a-box id="sgTile" class="trans group6" position="-3.85 -2.0 -8"></a-box>
+
+		<a-box id="mnTile" class="trans group7" position="-2.75 1.3 -8"></a-box>
+		<a-box id="tcTile" class="trans group7" position="-2.75 0.2 -8"></a-box>
+		<a-box id="reTile" class="trans group7" position="-2.75 -0.9 -8"></a-box>
+		<a-box id="bhTile" class="trans group7" position="-2.75 -2.0 -8"></a-box>
+
+		<a-box id="feTile" class="trans group8" position="-1.65 1.3 -8"></a-box>
+		<a-box id="ruTile" class="trans group8" position="-1.65 0.2 -8"></a-box>
+		<a-box id="osTile" class="trans group8" position="-1.65 -0.9 -8"></a-box>
+		<a-box id="hsTile" class="trans group8" position="-1.65 -2.0 -8"></a-box>
+
+		<a-box id="coTile" class="trans group9" position="-0.55 1.3 -8"></a-box>
+		<a-box id="rhTile" class="trans group9" position="-0.55 0.2 -8"></a-box>
+		<a-box id="irTile" class="trans group9" position="-0.55 -0.9 -8"></a-box>
+		<a-box id="mtTile" class="trans group9" position="-0.55 -2.0 -8"></a-box>
+
+		<a-box id="niTile" class="trans group10" position="0.55 1.3 -8"></a-box>
+		<a-box id="pdTile" class="trans group10" position="0.55 0.2 -8"></a-box>
+		<a-box id="ptTile" class="trans group10" position="0.55 -0.9 -8"></a-box>
+		<a-box id="dsTile" class="trans group10" position="0.55 -2.0 -8"></a-box>
+
+		<a-box id="cuTile" class="trans group11" position="1.65 1.3 -8"></a-box>
+		<a-box id="agTile" class="trans group11" position="1.65 0.2 -8"></a-box>
+		<a-box id="auTile" class="trans group11" position="1.65 -0.9 -8"></a-box>
+		<a-box id="rgTile" class="trans group11" position="1.65 -2.0 -8"></a-box>
+
+		<a-box id="znTile" class="poor group12" position="2.75 1.3 -8"></a-box>
+		<a-box id="cdTile" class="poor group12" position="2.75 0.2 -8"></a-box>
+		<a-box id="hgTile" class="poor group12" position="2.75 -0.9 -8"></a-box>
+		<a-box id="uubTile" class="poor group12" position="2.75 -2.0 -8"></a-box>
+
+		<a-box id="bTile" class="other group13" position="3.85 3.5 -8"></a-box>
+		<a-box id="alTile" class="poor group13" position="3.85 2.4 -8"></a-box>
+		<a-box id="gaTile" class="poor group13" position="3.85 1.3 -8"></a-box>
+		<a-box id="inTile" class="poor group13" position="3.85 0.2 -8"></a-box>
+		<a-box id="tlTile" class="poor group13" position="3.85 -0.9 -8"></a-box>
+		<a-box id="uutTile" class="poor group13" position="3.85 -2.0 -8"></a-box>
+
+		<a-box id="cTile" class="other group14" position="4.95 3.5 -8"></a-box>
+		<a-box id="siTile" class="other group14" position="4.95 2.4 -8"></a-box>
+		<a-box id="geTile" class="poor group14" position="4.95 1.3 -8"></a-box>
+		<a-box id="snTile" class="poor group14" position="4.95 0.2 -8"></a-box>
+		<a-box id="pbTile" class="poor group14" position="4.95 -0.9 -8"></a-box>
+		<a-box id="uuqTile" class="poor group14" position="4.95 -2.0 -8"></a-box>
+
+		<a-box id="nTile" class="other group15" position="6.05 3.5 -8"></a-box>
+		<a-box id="pTile" class="other group15" position="6.05 2.4 -8"></a-box>
+		<a-box id="asTile" class="other group15" position="6.05 1.3 -8"></a-box>
+		<a-box id="sbTile" class="poor group15" position="6.05 0.2 -8"></a-box>
+		<a-box id="biTile" class="poor group15" position="6.05 -0.9 -8"></a-box>
+		<a-box id="uupTile" class="poor group15" position="6.05 -2.0 -8"></a-box>
+
+		<a-box id="oTile" class="other group16" position="7.15 3.5 -8"></a-box>
+		<a-box id="sTile" class="other group16" position="7.15 2.4 -8"></a-box>
+		<a-box id="seTile" class="other group16" position="7.15 1.3 -8"></a-box>
+		<a-box id="teTile" class="other group16" position="7.15 0.2 -8"></a-box>
+		<a-box id="poTile" class="poor group16" position="7.15 -0.9 -8"></a-box>
+		<a-box id="uuhTile" class="poor group16" position="7.15 -2.0 -8"></a-box>
+
+		<a-box id="fTile" class="other group17" position="8.25 3.5 -8"></a-box>
+		<a-box id="clTile" class="other group17" position="8.25 2.4 -8"></a-box>
+		<a-box id="brTile" class="other group17" position="8.25 1.3 -8"></a-box>
+		<a-box id="iTile" class="other group17" position="8.25 0.2 -8"></a-box>
+		<a-box id="atTile" class="other group17" position="8.25 -0.9 -8"></a-box>
+		<a-box id="uusTile" class="group17" depth=".07" color="#fafafa" position="8.25 -2.0 -8"></a-box>
+
+		<a-box id="heTile" class="noble group18" position="9.35 4.6 -8"></a-box>
+		<a-box id="neTile" class="noble group18" position="9.35 3.5 -8"></a-box>
+		<a-box id="arTile" class="noble group18" position="9.35 2.4 -8"></a-box>
+		<a-box id="krTile" class="noble group18" position="9.35 1.3 -8"></a-box>
+		<a-box id="xeTile" class="noble group18" position="9.35 0.2 -8"></a-box>
+		<a-box id="rnTile" class="noble group18" position="9.35 -0.9 -8"></a-box>
+		<a-box id="uuoTile" class="noble group18" position="9.35 -2.0 -8"></a-box>
+
+		<!-- Begin abbreviation text -->
+
+		<a-text value="Periodic Table of Elements" color="black" align="center" width="15" position="0 5.7 -7.95"></a-text>
+		<a-text color="black" align="center" width="10" position="-11.95 1 0" rotation="0 90 0" value="Welcome! Have a look around and test your knowledge of the element names. This was originally supposed to be designed for a controller, but the APIs aren't finished yet and I'm lucky enough that I was able to create this! I have a ton of other features planned, like different environment options, the bottom two rows of elements, a key, more element info when you click on it, and better positioning of the tiles so it is easier to read. Until then, I think this is pretty cool as well!"></a-text>
+
+		<a-text value="H" id="hAbbrText" class="abbrText" position="-9.35 4.6 -7.95" height=""></a-text>
+		<a-text value="Li" id="liAbbrText" class="abbrText" position="-9.35 3.5 -7.95"></a-text>
+		<a-text value="Na" id="naAbbrText" class="abbrText" position="-9.35 2.4 -7.95"></a-text>
+		<a-text value="K" id="kAbbrText" class="abbrText" position="-9.35 1.3 -7.95"></a-text>
+		<a-text value="Rb" id="rbAbbrText" class="abbrText" position="-9.35 0.2 -7.95"></a-text>
+		<a-text value="Cs" id="csAbbrText" class="abbrText" position="-9.35 -0.9 -7.95"></a-text>
+		<a-text value="Fr" id="frAbbrText" class="abbrText" position="-9.35 -2.0 -7.95"></a-text>
+
+		<a-text value="Be" id="beAbbrText" class="abbrText" position="-8.25 3.5 -7.95"></a-text>
+		<a-text value="Mg" id="mgAbbrText" class="abbrText" position="-8.25 2.4 -7.95"></a-text>
+		<a-text value="Ca" id="caAbbrText" class="abbrText" position="-8.25 1.3 -7.95"></a-text>
+		<a-text value="Sr" id="srAbbrText" class="abbrText" position="-8.25 0.2 -7.95"></a-text>
+		<a-text value="Ba" id="baAbbrText" class="abbrText" position="-8.25 -0.9 -7.95"></a-text>
+		<a-text value="Ra" id="raAbbrText" class="abbrText" position="-8.25 -2.0 -7.95"></a-text>
+
+		<a-text value="Sc" id="scAbbrText" class="abbrText" position="-7.15 1.3 -7.95"></a-text>
+		<a-text value="Y" id="yAbbrText" class="abbrText" position="-7.15 0.2 -7.95"></a-text>
+		<a-text value="57-71" id="57AbbrText" class="abbrText" position="-7.15 -0.9 -7.95"></a-text>
+		<a-text value="89-103" id="89AbbrText" class="abbrText" position="-7.15 -2.0 -7.95"></a-text>
+
+		<a-text value="Ti" id="tiAbbrText" class="abbrText" position="-6.05 1.3 -7.95"></a-text>
+		<a-text value="Zr" id="zrAbbrText" class="abbrText" position="-6.05 0.2 -7.95"></a-text>
+		<a-text value="Hf" id="hfAbbrText" class="abbrText" position="-6.05 -0.9 -7.95"></a-text>
+		<a-text value="Rf" id="rfAbbrText" class="abbrText" position="-6.05 -2.0 -7.95"></a-text>
+
+		<a-text value="V" id="vAbbrText" class="abbrText" position="-4.95 1.3 -7.95"></a-text>
+		<a-text value="Nb" id="nbAbbrText" class="abbrText" position="-4.95 0.2 -7.95"></a-text>
+		<a-text value="Ta" id="taAbbrText" class="abbrText" position="-4.95 -0.9 -7.95"></a-text>
+		<a-text value="Db" id="dbAbbrText" class="abbrText" position="-4.95 -2.0 -7.95"></a-text>
+
+		<a-text value="Cr" id="crAbbrText" class="abbrText" position="-3.85 1.3 -7.95"></a-text>
+		<a-text value="Mo" id="moAbbrText" class="abbrText" position="-3.85 0.2 -7.95"></a-text>
+		<a-text value="W" id="wAbbrText" class="abbrText" position="-3.85 -0.9 -7.95"></a-text>
+		<a-text value="Sg" id="sgAbbrText" class="abbrText" position="-3.85 -2.0 -7.95"></a-text>
+
+		<a-text value="Mn" id="mnAbbrText" class="abbrText" position="-2.75 1.3 -7.95"></a-text>
+		<a-text value="Tc" id="tcAbbrText" class="abbrText" position="-2.75 0.2 -7.95"></a-text>
+		<a-text value="Re" id="reAbbrText" class="abbrText" position="-2.75 -0.9 -7.95"></a-text>
+		<a-text value="Bh" id="bhAbbrText" class="abbrText" position="-2.75 -2.0 -7.95"></a-text>
+
+		<a-text value="Fe" id="feAbbrText" class="abbrText" position="-1.65 1.3 -7.95"></a-text>
+		<a-text value="Ru" id="ruAbbrText" class="abbrText" position="-1.65 0.2 -7.95"></a-text>
+		<a-text value="Os" id="osAbbrText" class="abbrText" position="-1.65 -0.9 -7.95"></a-text>
+		<a-text value="Hs" id="hsAbbrText" class="abbrText" position="-1.65 -2.0 -7.95"></a-text>
+
+		<a-text value="Co" id="coAbbrText" class="abbrText" position="-0.55 1.3 -7.95"></a-text>
+		<a-text value="Rh" id="rhAbbrText" class="abbrText" position="-0.55 0.2 -7.95"></a-text>
+		<a-text value="Ir" id="irAbbrText" class="abbrText" position="-0.55 -0.9 -7.95"></a-text>
+		<a-text value="Mt" id="mtAbbrText" class="abbrText" position="-0.55 -2.0 -7.95"></a-text>
+
+		<a-text value="Ni" id="niAbbrText" class="abbrText" position="0.55 1.3 -7.95"></a-text>
+		<a-text value="Pd" id="pdAbbrText" class="abbrText" position="0.55 0.2 -7.95"></a-text>
+		<a-text value="Pt" id="ptAbbrText" class="abbrText" position="0.55 -0.9 -7.95"></a-text>
+		<a-text value="Ds" id="dsAbbrText" class="abbrText" position="0.55 -2.0 -7.95"></a-text>
+
+		<a-text value="Cu" id="cuAbbrText" class="abbrText" position="1.65 1.3 -7.95"></a-text>
+		<a-text value="Ag" id="agAbbrText" class="abbrText" position="1.65 0.2 -7.95"></a-text>
+		<a-text value="Au" id="auAbbrText" class="abbrText" position="1.65 -0.9 -7.95"></a-text>
+		<a-text value="Rg" id="rgAbbrText" class="abbrText" position="1.65 -2.0 -7.95"></a-text>
+
+		<a-text value="Zn" id="znAbbrText" class="abbrText" position="2.75 1.3 -7.95"></a-text>
+		<a-text value="Cd" id="cdAbbrText" class="abbrText" position="2.75 0.2 -7.95"></a-text>
+		<a-text value="Hg" id="hgAbbrText" class="abbrText" position="2.75 -0.9 -7.95"></a-text>
+		<a-text value="Uub" id="uubAbbrText" class="abbrText" position="2.75 -2.0 -7.95"></a-text>
+
+		<a-text value="B" id="bAbbrText" class="abbrText" position="3.85 3.5 -7.95"></a-text>
+		<a-text value="Al" id="alAbbrText" class="abbrText" position="3.85 2.4 -7.95"></a-text>
+		<a-text value="Ga" id="gaAbbrText" class="abbrText" position="3.85 1.3 -7.95"></a-text>
+		<a-text value="In" id="inAbbrText" class="abbrText" position="3.85 0.2 -7.95"></a-text>
+		<a-text value="Tl" id="tlAbbrText" class="abbrText" position="3.85 -0.9 -7.95"></a-text>
+		<a-text value="Uut" id="uutAbbrText" class="abbrText" position="3.85 -2.0 -7.95"></a-text>
+
+		<a-text value="C" id="cAbbrText" class="abbrText" position="4.95 3.5 -7.95"></a-text>
+		<a-text value="Si" id="siAbbrText" class="abbrText" position="4.95 2.4 -7.95"></a-text>
+		<a-text value="Ge" id="geAbbrText" class="abbrText" position="4.95 1.3 -7.95"></a-text>
+		<a-text value="Sn" id="snAbbrText" class="abbrText" position="4.95 0.2 -7.95"></a-text>
+		<a-text value="Pb" id="pbAbbrText" class="abbrText" position="4.95 -0.9 -7.95"></a-text>
+		<a-text value="Uuq" id="uuqAbbrText" class="abbrText" position="4.95 -2.0 -7.95"></a-text>
+
+		<a-text value="N" id="nAbbrText" class="abbrText" position="6.05 3.5 -7.95"></a-text>
+		<a-text value="P" id="pAbbrText" class="abbrText" position="6.05 2.4 -7.95"></a-text>
+		<a-text value="As" id="asAbbrText" class="abbrText" position="6.05 1.3 -7.95"></a-text>
+		<a-text value="Sb" id="sbAbbrText" class="abbrText" position="6.05 0.2 -7.95"></a-text>
+		<a-text value="Bi" id="biAbbrText" class="abbrText" position="6.05 -0.9 -7.95"></a-text>
+		<a-text value="Uup" id="uupAbbrText" class="abbrText" position="6.05 -2.0 -7.95"></a-text>
+
+		<a-text value="O" id="oAbbrText" class="abbrText" position="7.15 3.5 -7.95"></a-text>
+		<a-text value="S" id="sAbbrText" class="abbrText" position="7.15 2.4 -7.95"></a-text>
+		<a-text value="Se" id="seAbbrText" class="abbrText" position="7.15 1.3 -7.95"></a-text>
+		<a-text value="Te" id="teAbbrText" class="abbrText" position="7.15 0.2 -7.95"></a-text>
+		<a-text value="Po" id="poAbbrText" class="abbrText" position="7.15 -0.9 -7.95"></a-text>
+		<a-text value="Uuh" id="uuhAbbrText" class="abbrText" position="7.15 -2.0 -7.95"></a-text>
+
+		<a-text value="F" id="fAbbrText" class="abbrText" position="8.25 3.5 -7.95"></a-text>
+		<a-text value="Cl" id="clAbbrText" class="abbrText" position="8.25 2.4 -7.95"></a-text>
+		<a-text value="Br" id="brAbbrText" class="abbrText" position="8.25 1.3 -7.95"></a-text>
+		<a-text value="I" id="iAbbrText" class="abbrText" position="8.25 0.2 -7.95"></a-text>
+		<a-text value="At" id="atAbbrText" class="abbrText" position="8.25 -0.9 -7.95"></a-text>
+		<a-text value="Uus" id="uusAbbrText" class="abbrText" position="8.25 -2.0 -7.95"></a-text>
+
+		<a-text value="He" id="heAbbrText" class="abbrText" position="9.35 4.6 -7.95"></a-text>
+		<a-text value="Ne" id="neAbbrText" class="abbrText" position="9.35 3.5 -7.95"></a-text>
+		<a-text value="Ar" id="arAbbrText" class="abbrText" position="9.35 2.4 -7.95"></a-text>
+		<a-text value="Kr" id="krAbbrText" class="abbrText" position="9.35 1.3 -7.95"></a-text>
+		<a-text value="Xe" id="xeAbbrText" class="abbrText" position="9.35 0.2 -7.95"></a-text>
+		<a-text value="Rn" id="rnAbbrText" class="abbrText" position="9.35 -0.9 -7.95"></a-text>
+		<a-text value="Uuo" id="uuoAbbrText" class="abbrText" position="9.35 -2.0 -7.95"></a-text>
+
+		<!-- begin name text-->
+
+		<a-text value="Hydrogen" id="hText" class="nameText" position="-9.35 4.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Lithium" id="liText" class="nameText" position="-9.35 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Sodium" id="naText" class="nameText" position="-9.35 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Potassium" id="kText" class="nameText" position="-9.35 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Rubidium" id="rbText" class="nameText" position="-9.35 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Cesium" id="csText" class="nameText" position="-9.35 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Francium" id="frText" class="nameText" position="-9.35 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Beryllium" id="beText" class="nameText" position="-8.25 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Magnesium" id="mgText" class="nameText" position="-8.25 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Calcium" id="caText" class="nameText" position="-8.25 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Stronium" id="srText" class="nameText" position="-8.25 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Barium" id="baText" class="nameText" position="-8.25 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Radium" id="raText" class="nameText" position="-8.25 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Scandium" id="scText" class="nameText" position="-7.15 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Yttrium" id="yText" class="nameText" position="-7.15 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="57-71" id="57Text" class="nameText" position="-7.15 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="89-83" id="89Text" class="nameText" position="-7.15 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Titanium" id="tiText" class="nameText" position="-6.05 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Zirconium" id="zrText" class="nameText" position="-6.05 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Hafnium" id="hfText" class="nameText" position="-6.05 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Rutherfordium" id="rfText" class="nameText" position="-6.05 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Vanadium" id="vText" class="nameText" position="-4.95 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Niobium" id="nbText" class="nameText" position="-4.95 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Tantalum" id="taText" class="nameText" position="-4.95 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Dubnium" id="dbText" class="nameText" position="-4.95 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Chromium" id="crText" class="nameText" position="-3.85 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Molybdenum" id="moText" class="nameText" position="-3.85 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Tungsten" id="wText" class="nameText" position="-3.85 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Seaborgium" id="sgText" class="nameText" position="-3.85 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Manganese" id="mnText" class="nameText" position="-2.75 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Technetium" id="tcText" class="nameText" position="-2.75 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Rhenium" id="reText" class="nameText" position="-2.75 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Bohrium" id="bhText" class="nameText" position="-2.75 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Iron" id="feText" class="nameText" position="-1.65 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ruthenium" id="ruText" class="nameText" position="-1.65 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Osmium" id="osText" class="nameText" position="-1.65 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Hassium" id="hsText" class="nameText" position="-1.65 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Cobalt" id="coText" class="nameText" position="-0.55 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Rhodium" id="rhText" class="nameText" position="-0.55 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Iridium" id="irText" class="nameText" position="-0.55 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Meitnerium" id="mtText" class="nameText" position="-0.55 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Nickel" id="niText" class="nameText" position="0.55 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Palladium" id="pdText" class="nameText" position="0.55 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Platinum" id="ptText" class="nameText" position="0.55 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Darmstadtium" id="dsText" class="nameText" position="0.55 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Copper" id="cuText" class="nameText" position="1.65 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Silver" id="agText" class="nameText" position="1.65 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Gold" id="auText" class="nameText" position="1.65 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Roentgenium" id="rgText" class="nameText" position="1.65 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Zinc" id="znText" class="nameText" position="2.75 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Cadmium" id="cdText" class="nameText" position="2.75 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Mercury" id="hgText" class="nameText" position="2.75 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununbium" id="uubText" class="nameText" position="2.75 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Boron" id="bText" class="nameText" position="3.85 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Aluminum" id="alText" class="nameText" position="3.85 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Gallium" id="gaText" class="nameText" position="3.85 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Indium" id="inText" class="nameText" position="3.85 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Thallium" id="tlText" class="nameText" position="3.85 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununtrium" id="uutText" class="nameText" position="3.85 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Carbon" id="cText" class="nameText" position="4.95 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Silicon" id="siText" class="nameText" position="4.95 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Germanium" id="geText" class="nameText" position="4.95 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Tin" id="snText" class="nameText" position="4.95 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Lead" id="pbText" class="nameText" position="4.95 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununquadium" id="uuqText" class="nameText" position="4.95 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Nitrogen" id="nText" class="nameText" position="6.05 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Phosphorous" id="pText" class="nameText" position="6.05 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Arsenic" id="asText" class="nameText" position="6.05 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Antimony" id="sbText" class="nameText" position="6.05 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Bismuth" id="biText" class="nameText" position="6.05 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununpentium" id="uupText" class="nameText" position="6.05 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Oxygen" id="oText" class="nameText" position="7.15 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Sulfur" id="sText" class="nameText" position="7.15 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Selenium" id="seText" class="nameText" position="7.15 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Tellurium" id="teText" class="nameText" position="7.15 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Polonium" id="poText" class="nameText" position="7.15 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununhexium" id="uuhText" class="nameText" position="7.15 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Flourine" id="fText" class="nameText" position="8.25 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Chlorine" id="clText" class="nameText" position="8.25 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Bromine" id="brText" class="nameText" position="8.25 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Iodine" id="iText" class="nameText" position="8.25 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Astatine" id="atText" class="nameText" position="8.25 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununseptium" id="uusText" class="nameText" position="8.25 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+
+		<a-text value="Helium" id="heText" class="nameText" position="9.35 4.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Neon" id="neText" class="nameText" position="9.35 3.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Argon" id="arText" class="nameText" position="9.35 2.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Krypton" id="krText" class="nameText" position="9.35 1.0 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Xenon" id="xeText" class="nameText" position="9.35 -0.1 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Radon" id="rnText" class="nameText" position="9.35 -1.2 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+		<a-text value="Ununoctium" id="uuoText" class="nameText" position="9.35 -2.3 -7.95">
+			<a-animation attribute="visible" begin="fadeIn" to="true"></a-animation>
+			<a-animation attribute="visible" begin="fadeOut" to="false"></a-animation>
+		</a-text>
+	</a-scene>
+	<script>
+
+		//box sizing & color
+		var tileCounter;
+
+		var alkaliTiles = $('.alkali');
+		for (tileCounter = 0; tileCounter < alkaliTiles.length; ++tileCounter) {
+			alkaliTiles[tileCounter].setAttribute("depth", ".07");
+			alkaliTiles[tileCounter].setAttribute("color", "#ff9100");
+		}
+
+		var alkalineTiles = $('.alkaline');
+		for (tileCounter = 0; tileCounter < alkalineTiles.length; ++tileCounter) {
+			alkalineTiles[tileCounter].setAttribute("depth", ".07");
+			alkalineTiles[tileCounter].setAttribute("color", "#ffea00");
+		}
+
+		var transTiles = $('.trans');
+		for (tileCounter = 0; tileCounter < transTiles.length; ++tileCounter) {
+			transTiles[tileCounter].setAttribute("depth", ".07");
+			transTiles[tileCounter].setAttribute("color", "#ff80ab");
+		}
+
+		var poorTiles = $('.poor');
+		for (tileCounter = 0; tileCounter < poorTiles.length; ++tileCounter) {
+			poorTiles[tileCounter].setAttribute("depth", ".07");
+			poorTiles[tileCounter].setAttribute("color", "#1de9b6");
+		}
+
+		var otherTiles = $('.other');
+		for (tileCounter = 0; tileCounter < otherTiles.length; ++tileCounter) {
+			otherTiles[tileCounter].setAttribute("depth", ".07");
+			otherTiles[tileCounter].setAttribute("color", "#76ff03");
+		}
+
+		var nobleTiles = $('.noble');
+		for (tileCounter = 0; tileCounter < nobleTiles.length; ++tileCounter) {
+			nobleTiles[tileCounter].setAttribute("depth", ".07");
+			nobleTiles[tileCounter].setAttribute("color", "#448aff");
+		}
+
+		//text stuff
+
+		var abbrArray = ["h", "li", "na", "k", "rb", "cs", "fr", "be", "mg", "ca", "sr", "ba", "ra", "sc", "y", "57", "89", "ti", "zr", "hf", "rf", "v", "nb", "ta", "db", "cr", "mo", "w", "sg", "mn", "tc", "re",
+									"bh", "fe", "ru", "os", "hs", "co", "rh", "ir", "mt", "ni", "pd", "pt", "ds", "cu", "ag", "au", "rg", "zn", "cd", "hg", "uub", "b", "al", "ga", "in", "tl", "uut", "c", "si", "ge", "sn", "pb",
+									"uuq", "n", "p", "as", "sb", "bi", "uup", "o", "s", "se", "te", "po", "uuh", "f", "cl", "br", "i", "at", "uus", "he", "ne", "ar", "kr", "xe", "rn", "uuo"]
+
+		var abbrText = $('.abbrText');
+		for (tileCounter = 0; tileCounter < abbrText.length; ++tileCounter) {
+			abbrText[tileCounter].setAttribute("color", "black");
+			abbrText[tileCounter].setAttribute("align", "center");
+			abbrText[tileCounter].setAttribute("width", "8");
+			textAnimationFadeIn(abbrArray[tileCounter]);
+			textAnimationFadeOut(abbrArray[tileCounter]);
+		}
+
+		var nameText = $('.nameText');
+		for (tileCounter = 0; tileCounter < nameText.length; ++tileCounter) {
+			nameText[tileCounter].setAttribute("color", "black");
+			nameText[tileCounter].setAttribute("align", "center");
+			nameText[tileCounter].setAttribute("width", "5");
+			nameText[tileCounter].setAttribute("visible", "false");
+		}
+
+		//interaction
+
+		function setupAnimationFade (elemVar) {
+			var setupSelectorName = document.getElementById(elemVar + 'Text');
+			setupSelectorName.appendChild(a-animation);
+		}
+
+		function textAnimationFadeIn (elemVar) {
+			var inSelectorName = document.getElementById(elemVar + 'Tile');
+			inSelectorName.addEventListener('click', function () {
+				document.querySelector('#' + elemVar + 'Text').emit('fadeIn');
+			});
+		}
+
+		function textAnimationFadeOut (elemVar) {
+			var outSelectorName = document.getElementById(elemVar +'Tile');
+			outSelectorName.addEventListener('mouseleave', function () {
+				document.querySelector('#' + elemVar + 'Text').emit('fadeOut');
+			});
+		}
+
+		textAnimationFadeOut("h");
+	</script>
+</body>
+</html>

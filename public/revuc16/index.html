@@ -1,0 +1,55 @@
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59484438-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-59484438-1');
+	</script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<link href="Meme Me Logo 96.png" rel="icon" sizes="96x96">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://download.affectiva.com/js/3.2.1/affdex.js"></script>
+	<script defer src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap-theme.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" type="text/css" href="styles.css"></link>
+	<title>Meme Me!</title>
+	<meta name="theme-color" content="#FFC0CB">
+</head>
+<body>
+	<h1>MEME ME!</h1>
+	<div id="videoContainer">
+		<video id="video" autoplay="true"></video>
+	</div>
+	<img id="photo"></img>
+	<canvas id="cameracanvas" style="display:none"></canvas>
+	<br>
+	<br>
+	<button class="camera" id="startbutton">Capture</button>
+	<button class="camera" id="btnOK">Continue</button>
+	<br>
+	<br>
+	<div class="container-fluid">
+		<div id="affdex_elements">
+			<canvas id="image_canvas"></canvas>
+		</div>
+	</div>
+	<br>
+	<button><a id="download">Download your Me Meme!</a></button>
+	<br>
+	<br>
+	<div>
+		<div>
+			<strong>EMOTION TRACKING RESULTS</strong>
+			<div id="results" style="word-wrap:break-word"></div>
+		</div>
+		<br>
+		<div id="logs"></div>
+	</div>
+</body>
+</html>
