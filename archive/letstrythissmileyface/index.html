@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta id="chromeTheme" name="theme-color" content="#">
+	<title>Fun stuff</title>
+
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+</head>
+<body ng-app="myApp" ng-cloak>
+	<div layout="column">
+		<md-toolbar style="height:370px">
+			<div class="md-toolbar-tools" flex="50" flex-offset="75" style="margin-top:0; width:20%">
+				<md-button class="md-icon-button" style="margin-right:0" aria-label="Search">
+					<i class="material-icons">search</i>
+				</md-icon></md-button>
+				<md-button class="md-icon-button" style="margin-left:0">
+					<i class="material-icons">notifications</i>
+					
+				</md-button>
+				<div style="position:absolute; border-radius:50%; background-color:#FF3466; width:15px; height:15px; margin-left:60px; visibility:hidden">
+					<p style="font-size:3px">8</p>
+				</div>
+				<img src="profile.png" style="height:45px; width:45px; border-radius:50%; border-style:solid; border-width:2px">
+				<md-button class="md-icon-button" style="margin-left:0">
+					<i class="material-icons">keyboard_arrow_down</i>
+				</md-button>
+			</div>
+			<div flex="50" flex-offset="20" style="margin-top:90px">
+				<p style="font-size:50px; font-weight:300; margin:5px">DASHBOARD</p>
+				<p style="font-size:17px; margin:5px">Welcome back Jason Kendall</p>
+			</div>
+		</md-toolbar>
+		<md-tabs md-center-tabs md-dynamic-height class="md-primary">
+			<md-tab label="dashboard">
+				<md-content flex="60" flex-offset="20">
+					<div class="md-toolbar-tools" style="padding-top:30px; padding-bottom:20px" layout="row">
+						<md-button class="md-icon-button">
+							<i id="sliderI" class="material-icons">apps</i>
+						</md-button>
+						<md-button class="md-icon-button">
+							<i id="sliderI" class="material-icons">settings</i>
+						</md-button>
+						<md-slider ng-model="myValue" min="5" max="100" aria-label="slider"></md-slider>
+					</div>
+					<div layout="row" style="height:374px">
+						<md-card md-theme="teal" flex="33" style="position:relative">
+							<md-toolbar layout="row" ng-controller="MyController">
+								<div class="md-toolbar-tools">
+									<md-button class="md-icon-button">
+										<i class="material-icons" ng-click="openCardOne()">menu</i>
+									</md-button>
+									<p>Inbox</p>
+								</div>
+							</md-toolbar>
+							<md-content>
+								<md-button style="position:fixed; margin-left:320px; margin-top:240px" layout="column" layout-align="center" class="md-fab md-mini material-icons">
+									<i class="material-icons">mode_edit</i>
+								</md-button>
+								<md-list>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Allison Grayce</p>
+												<p md-truncate class="inboxMessage">If you don't break a few things you're not trying hard enough</p>
+											</div>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Brad Frost</p>
+												<p md-truncate class="inboxMessage">Neat! A self-guided workshop for learning the basics</p>
+											</div>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Anthony Nguyen</p>
+												<p md-truncate class="inboxMessage">There's some great points in the medium post from that site</p>
+											</div>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Jason Kendall</p>
+												<p md-truncate class="inboxMessage">You need to replace those switch statements with something else</p>
+											</div>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Kaetlyn Friedson</p>
+												<p md-truncate class="inboxMessage">Your Guide to Online Research and Testing Tools</p>
+											</div>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<md-list-item class="md-2-line">
+										<div class="md-list-item-text" layout="row">
+											<img src="profile.png" class="md-avatar">
+											<div layout="column" layout-align="center">
+												<p class="inboxName">Dribbble</p>
+												<p md-truncate class="inboxMessage">Hi Jason Kendall. You have a new follower on Twitter</p>
+											</div>
+										</div>
+									</md-list-item>
+								</md-list>
+								<div>
+									<md-sidenav md-component-id="cardOne" flex="75" class="md-sidenav-left">
+										
+									</md-sidenav>
+								</div>
+							<md-content>
+						</md-card>
+						<md-card flex="33">
+							<md-toolbar style="height:180px">
+								<div layout-align="end center" class="md-toolbar-tools">
+									<md-menu md-position-mode="target-right target">
+										<md-button class="md-icon-button" aria-label="Open card 2 menu" ng-click="$mdMenu.open($event)">
+											<i class="material-icons">more_vert</i>
+										</md-button>
+										<md-menu-content>
+											<md-menu-item><md-button>Do Something</md-button></md-menu-item>
+										</md-menu-content>
+									</md-menu>
+								</div>
+							</md-toolbar>
+							<md-card-content>
+							</md-card-content>
+						</md-card>
+						<md-card flex="33">
+							<md-toolbar style="height:220px">
+								<div layout-align="space-between center" class="md-toolbar-tools">
+									<div>
+										<p class="md-title" style="margin-bottom:0; font-size:17px; font-weight:500">Total Sales</p>
+										<p class="md-subhead" style="margin-top:0; font-size:12px">November 2015</p>
+									</div>
+									<md-menu md-position-mode="target-right target">
+										<md-button class="md-icon-button" aria-label="Open card 3 menu" ng-click="$mdMenu.open($event)">
+											<i class="material-icons">more_vert</i>
+										</md-button>
+										<md-menu-content>
+											<md-menu-item><md-button>Do Something Else</md-button></md-menu-item>
+										</md-menu-content>
+									</md-menu>
+								</div>
+							</md-toolbar>
+							<md-card-content layout="column">
+								<div layout="row" layout-align="space-between">
+									<div layout="column">
+										<p class="md-title" style="margin-bottom:0; font-size:17px; font-weight:500">35%</p>
+										<p class="md-subhead" style="margin-top:0; font-size:12px">Direct Sale</p>
+									</div>
+									<div>
+										<p class="md-title" style="margin-bottom:0; font-size:17px; font-weight:500">15%</p>
+										<p class="md-subhead" style="margin-top:0; font-size:12px">Pending Sale</p>
+									</div>
+								</div>
+								<div layout="row" layout-align="space-between">
+									<div layout="column">
+										<p class="md-title" style="margin-bottom:0; font-size:17px; font-weight:500">50%</p>
+										<p class="md-subhead" style="margin-top:0; font-size:12px">Credit Sale</p>
+									</div>
+									<div layout="column">
+										<p class="md-title" style="margin-bottom:0; margin-top:19px; font-size:12px">Total Revenue</p>
+										<p class="md-subhead" style="margin-top:0; font-size:17px; font-weight:600">$32,450</p>
+									</div>
+								</div>
+							</md-card-content>
+						</md-card>
+					</div>
+					<div layout="row" style="height:374px">
+						<md-card flex="33">
+							<md-card-content>
+							</md-card-content>
+						</md-card>
+						<md-card flex>
+							<md-card-content>
+							</md-card-content>
+						</md-card>
+					</div>
+					<div layout="row" style="height:374px">
+						<md-card md-theme="red" flex>
+							<md-toolbar>
+								<div layout-align="space-between center" class="md-toolbar-tools">
+									<div layout="row">
+										<md-button class="md-icon-button" style="margin-top:12px; margin-left:0">
+											<i class="material-icons">arrow_back</i>
+										</md-button>
+										<p>Allison Grayce</p>
+									</div>
+									<div>
+										<md-button class="md-icon-button">
+											<i class="material-icons">search</i>
+										</md-button>
+										<md-button class="md-icon-button">
+											<i class="material-icons">more_vert</i>
+										</md-button>
+									</div>
+								</div>
+							</md-toolbar>
+							<md-card-content>
+							</md-card-content>
+						</md-card>
+						<md-card flex>
+							<md-toolbar layout="row">
+								<div layout-align="space-between center" class="md-toolbar-tools">
+									<div>
+										<p>Reminders</p>
+									</div>
+									<div layout="row">
+										<p>November 16, 2015</p>
+										<md-button class="md-icon-button" style="margin-top:12px; margin-right:0">
+											<i class="material-icons">event</i>
+										</md-button>
+										<md-button class="md-icon-button" style="margin-top:12px; margin-right:0; margin-left:0">
+											<i class="material-icons">more_vert</i>
+										</md-button>
+									</div>
+								</div>
+							</md-toolbar>
+							<md-card-content>
+							</md-card-content>
+						</md-card>
+					</div>
+				</md-content>
+			</md-tab>
+			<md-tab label="ui elements"></md-tab>
+			<md-tab label="widgets"></md-tab>
+			<md-tab label="forms"></md-tab>
+			<md-tab label="graphs"></md-tab>
+			<md-tab label="gallery"></md-tab>
+			<md-tab label="maps"></md-tab>
+			<md-tab label="pages"></md-tab>
+			<md-tab label="icons"></md-tab>
+			<md-tab label="···"></md-tab>
+		</md-tabs>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+</body>
+</html>

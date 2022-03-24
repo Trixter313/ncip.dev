@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-59484438-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-59484438-1');
+	</script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<meta id="chromeTheme" name="theme-color" content="#1976D2">
+	<title>Nick's Playground</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" sizes="192x192" href="images/android-icon-192x192.png">
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Nick's Playground">
+	<link rel="apple-touch-icon" href="images/apple-icon-152x152.png">
+	<!-- Tile icon for Windows -->
+	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+	<meta name="msapplication-TileColor" content="#1976D2">
+
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script defer src="script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
+	<script defer src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+</head>
+<body ng-app="myApp" ng-cloak ng-controller="controller" md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}"> <!-- md-theme="{{theme}}" -->
+	<md-toolbar layout="row" layout-align="start center" hide-sm hide-xs flex class="md-tall md-primary">
+		<h3 style="padding-left:40px" class="md-display-1">Nick's Playground</h3>
+		<span flex></span>
+		<!--<md-button href="#" class="md-primary md-raised" ng-click="changeTheme('win')">
+			Change theme
+		</md-button>-->
+		<md-checkbox style="padding-right:20px" ng-model="showDarkTheme">Dark Theme</md-checkbox>
+	</md-toolbar>
+	<md-tabs md-dynamic-height md-border-bottom class="md-primary md-hue-1">
+		<md-tab label="Home">
+			<md-content class="md-padding">
+				<md-content layout-xs="column" layout="row" layout-align="center">
+					<div flex-gt-sm="40" flex-md="60" flex-lg="52">
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-header layout-align="center">
+								<div style="background-image: url('images/logo.svg')" class="card-image">
+									<md-tooltip>
+										This is a vector image - it uses math to create a picture!
+									</md-tooltip>
+								</div>
+							</md-card-header>
+							<md-divider></md-divider>
+							<div flex>
+								<md-card-content style="padding:0">
+									<h4 class="md-headline">Welcome!</h4>
+									<p class="md-body-1">I'm not really sure what to do now... If you have any suggestions, tell me!<br>Also, check out that sweet vector image!</p>
+								</md-card-content>
+								<md-divider></md-divider>
+								<md-card-actions layout="row" layout-align="end center">
+									<md-button class="md-accent" ng-href="mailto:suggestions@ncip.dev" target="_blank">Submit a suggestion</md-button>
+								</md-card-actions>
+							</div>
+						</md-card>
+						<md-card>
+							<md-card-content>
+								<h4 class="md-headline">Random Stuff</h4>
+								<div style="margin-bottom: 20px" layout="row">
+									<div style="margin-right: 25px">
+										<md-icon style="font-size:64px">share</md-icon>
+									</div>
+									<div>
+										<h5 style="margin:0" class="md-body-2">Social Media</h5>
+										<p class="md-body-1">Here's my <a href="https://www.twitter.com/trixter313" class="md-accent">Twitter</a>, and here's my <a href="https://linkedin.com/in/ncipriani" class="md-accent">LinkedIn</a>!</p>
+									</div>
+								</div>
+								<md-divider></md-divider>
+								<div style="margin-top: 20px; margin-bottom: 20px" layout="row">
+									<div style="margin-right: 25px">
+										<a href="/school/vrpertable">
+											<md-icon style="font-size:64px">assessment</md-icon>
+										</a>
+									</div>
+									<div>
+										<h5 style="margin:0" class="md-body-2">I created a VR Periodic Table for my Genius Hour project!</h5>
+										<p class="md-body-1">You can check it out <a href="/school/vrpertable" class="md-accent">here</a>. (Requires VR headset for best experience.)</p>
+									</div>
+								</div>
+								<md-divider></md-divider>
+								<div style="margin-top: 20px" layout="row">
+									<div style="margin-right: 25px">
+										<a href="/revuc16">
+											<md-icon style="font-size:64px">camera_enhance</md-icon>
+										</a>
+									</div>
+									<div>
+										<h5 style="margin:0" class="md-body-2">Megan, Richard, & I participated in a hackathon!</h5>
+										<p class="md-body-1">Click <a href="/revuc16" class="md-accent">here</a> to use our project, Meme Me! (Requires a webcam)</p>
+									</div>
+								</div>
+							</md-card-content>
+						</md-card>
+						<md-card layout="row" layout-sm="column" layout-xs="column">
+							<md-card-content>
+								<h4 class="md-headline">About me</h4>
+								<p class="md-body-1">I'm currently a 1st year in college and enjoy programming as a hobby. I think it's fun to work your way through issues you inevitably encounter and end up learning something new in the process! As for a career I am interested in STEM, particularly physics and chemistry.</p>
+							</md-card-content>
+							<md-divider></md-divider>
+							<md-card-header layout-align="center">
+								<div class="card-image">
+									<img src="images/profile.webp" style="border-radius:50%" onerror="this.onerror=null; this.src='images/profile.jpg'">
+									<md-tooltip>
+										A school picture of me.
+									</md-tooltip>
+								</div>
+							</md-card-header>
+						</md-card>
+					</div>
+				</md-content>
+				<md-card style="margin-top:20px; padding:60px">
+					<div layout="row" layout-xs="column" layout-align="space-around">
+						<div layout="row" layout-align="space-between">
+							<img src="images/charlie.webp" height="100px" width="100px" style="border-radius:50%" alt="Charlie" onerror="this.onerror=null; this.src='images/charlie.png'">
+							<div style="padding-left:10px">
+								<h5 class="md-body-2">Doggo</h5>
+								<p class="md-body-1">Here's a picture of Charlie!</p>
+							</div>
+						</div>
+						<div layout="row">
+							<md-icon style="font-size:100px">sentiment_very_satisfied</md-icon>
+							<div style="padding-left:10px">
+								<h5 class="md-body-2">Congrats!</h5>
+								<p class="md-body-1">You've reached the bottom. Check out the game tab at the top!</p>
+							</div>
+						</div>
+					</div>
+				</md-card>
+			</md-content>
+		</md-tab>
+		<md-tab label="Rock Paper Scissors! (WIP)">
+			<md-content layout="row" layout-align="center center" class="md-padding">
+				<md-card flex-gt-xs="40">
+					<md-card-content>
+						<h4 class="md-headline" style="text-align:center">A little classic game of Rock Paper Scissors
+							<md-button id="rpsMute" onclick="muteRPS();" layout-align="center center" class="md-icon-button md-primary" aria-label="Mute">
+								<md-icon>volume_up</md-icon>
+								<md-tooltip>
+									Mute game sounds
+								</md-tooltip>
+							</md-button>
+							<md-button id="rpsUnmute" onclick="unmuteRPS();" class="md-icon-button md-primary" aria-label="Mute" style="display:none">
+								<md-icon>volume_off</md-icon>
+								<md-tooltip>
+									Unmute game sounds
+								</md-tooltip>
+							</md-button>
+						</h4>
+
+						<!-- Game Icons -->
+						<div layout="row" layout-align="center">
+							<a href=""><md-icon class="gameIcon md-accent" style="font-size:125px" onclick="rpsChoose('Rock'); startRps();">lens</md-icon></a>
+							<md-progress-circular md-diameter="125" md-mode="indeterminate" style="display:none"></md-progress-circular>
+							<a href=""><md-icon class="gameIcon md-accent" style="font-size:125px" onclick="rpsChoose('Paper'); startRps();">content_paste</md-icon></a>
+							<a href=""><md-icon class="gameIcon md-accent" style="font-size:125px" onclick="rpsChoose('Scissors'); startRps();">content_cut</md-icon></a>
+						</div>
+						<div id="textUserChoice"></div>
+						<div id="textComputerChoice"></div>
+						<div id="textResult"></div>
+					</md-card-content>
+				</md-card>
+			</md-content>
+		</md-tab>
+		<md-tab label="To-do">
+			<md-content layout="row" layout-align="center center" class="md-padding">
+				<md-card flex-gt-xs="40">
+					<md-card-content>
+						<h4 class="md-headline">To-do</h4>
+						<p class="md-body-1">A list of suggestions received that will (probably) happen eventually, and some explanations.</p>
+						<ul class="toc">
+							<h4 class="md-caption">Contents</h4>
+							<p>Think of more to-do's</p>
+							<p>Add as many features as possible to the RPS game
+							<p>Make a minigame</p>
+							<p>Add as many MD components as possible!</p>
+							<p>Get rid of to-do tab</p>
+						</ul>
+						<h4 class="md-title" id="think">Think of more to-do's</h4>
+						<p class="md-body-1">Kinda stunted right now... Don't know where to go from here. If you have any ideas, I'd love to hear about them!</p>
+						<h4 class="md-title" id="addFeatures">Add as many features as possible to the RPS game</h4>
+						<p class="md-body-1">Currently planned: a score counter, re-adding theme changing to whole page, loading animation (✓), and a mute button (✓)!</p>
+						<h4 class="md-title" id="game">Make a minigame</h4>
+						<p class="md-body-1">Create a fun little experiment to pass the time. Thanks for the suggestion Kalyani!</p>
+						<h4 class="md-title" id="mdComponents">Add as many MD components as possible!</h4>
+						<p class="md-body-1">Ever heard of Material Design? It's a set of guidelines created by Google to make a design language that is versatile and looks good on all platforms, from watches to cars and everything between! This site uses MD and many of it's components such as the toolbar at the top and the shadows under the cards. One thing I have in mind is adding a floating action button to submit a suggestion from anywhere on the site! Doesn't that sound fancy?</p>
+						<h4 class="md-title" id="rid">Get rid of to-do tab</h4>
+						<p class="md-body-1">Still on the fence with this one. I don't really like the idea of it, but I need to add another tab before I can delete it! Looks like I need another minigame =D</p>
+					</md-card-content>
+				</md-card>
+			</md-content>
+		</md-tab>
+	</md-tabs>
+	<div style="position:fixed; right:21px; bottom:80px">
+		<md-button id="audioOn" class="md-fab" onclick="backgroundPlay();" aria-label="Play">
+			<md-icon class="fab-icon">music_note</md-icon>
+		</md-button>
+		<md-button id="audioOff" class="md-fab" onclick="backgroundPause();" style="display:none" aria-label="Pause">
+			<md-icon class="fab-icon">stop</md-icon>
+		</md-button>
+		<md-tooltip md-direction="left">
+			Courtesy of bensound.com
+		</md-tooltip>
+	</div>
+	<md-button class="md-fab" ng-href="mailto:suggestions@ncip.dev" target="_blank" style="position:fixed; right:21px; bottom:10px" aria-label="Email">
+		<md-icon class="fab-icon">email</md-icon>
+	</md-button>
+	<script>
+		angular.module('myApp', ['ngMaterial'])
+			.config(function($mdThemingProvider){
+
+				$mdThemingProvider.theme('default')
+					.primaryPalette('blue', {
+						'hue-1': '700'
+					})
+					.accentPalette('light-blue');
+
+				$mdThemingProvider.theme('dark-blue')
+					.accentPalette('blue')
+					.backgroundPalette('grey')
+					.dark()
+
+				$mdThemingProvider.theme('win')
+					.primaryPalette('green', {
+						'hue-1': '700'
+					})
+					.accentPalette('light-green');
+
+				$mdThemingProvider.theme('lose')
+					.primaryPalette('red', {
+						'hue-1': '700'
+					})
+					.accentPalette('pink');
+
+				$mdThemingProvider.theme('tie')
+					.primaryPalette('amber', {
+						'hue-1': '700'
+					})
+					.accentPalette('yellow');
+
+				$mdThemingProvider.alwaysWatchTheme(true);
+			})
+			.controller('controller', function($scope){
+
+				$scope.changeTheme = function() {
+					$scope.theme = $scope.theme === 'win' ? 'lose' : 'win';
+				};
+			});
+	</script>
+</body>
+</html>
