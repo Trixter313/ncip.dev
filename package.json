@@ -9,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material/web": "^1.0.0",
     "@shoelace-style/shoelace": "^2.9.0",
     "lit": "^2.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.1"
   }
 }
