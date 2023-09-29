@@ -1,91 +1,126 @@
 /* Global CSS */
 :root {
 	--md-sys-color-primary: #1976d2;
+	--md-sys-color-secondary: #00e5ff;
+	/* --md-fab-container-color: #00e5ff; */
+	--md-icon-font: 'Material Symbols Rounded';
+	--md-sys-color-secondary-container: #00e5ff;
+	--md-fab-icon-color: #1c3c93;
+	--md-switch-selected-track-color: #0c3b6a;
+	--md-elevation-level: 1;
+	--md-divider-color: rgba(0, 0, 0, 0.15);
+	--md-divider-thickness: 0.5px;
+	--md-icon-button-icon-color: var(--md-sys-color-primary);
 
-  --mdc-theme-primary: #1976d2;
-  --mdc-theme-secondary: #00e5ff;
+	--mdc-theme-primary: #1976d2;
+	--mdc-theme-secondary: #00e5ff;
 	--mdc-theme-on-secondary: #000000;
-  --mdc-theme-background:#fafafa;
-	--mdc-theme-on-surface: rgba(0,0,0,0.87);
-	--mdc-theme-text-primary-on-light: rgba(0,0,0,.6);
+	--mdc-theme-background: #fafafa;
+	--mdc-theme-on-surface: rgba(0, 0, 0, 0.87);
+	--mdc-theme-text-primary-on-light: rgba(0, 0, 0, .6);
 }
+
 body {
 	margin: 0;
 }
+
 .flex {
 	display: flex;
 }
+
 .mdc-typography--headline5 {
 	margin: 0 0 10px 0;
 }
+
 h4 {
 	margin: 10px 0;
 }
+
 h5 {
 	margin: 0;
 }
-hr {
-	border-width: 1px 0 0 0;
-	border-color: rgba(0,0,0,0.12);
+
+.mdc-card-content md-divider {
+	margin: 8px 0;
 }
+
 .divider-right {
 	border-style: solid;
 	border-width: 0 1px 0 0;
-	border-color: rgba(0,0,0,0.12);
+	border-color: var(--md-divider-color);
 }
+
 a {
 	text-decoration-line: none;
 }
+
+.mdc-card {
+	/* To use material component elevate instead */
+	box-shadow: none;
+}
+
 .mdc-card-content {
 	padding: 40px;
 }
+
 @media (max-width: 599px) {
-    .mdc-layout-grid {
-			max-width: 600px;
-		}
+	.mdc-layout-grid {
+		max-width: 600px;
+	}
 }
+
 @media (min-width: 600px) {
-    .mdc-layout-grid {
-			max-width: 700px;
-		}
-		#rpsTab .mdc-layout-grid__inner {
-			width: 100%;
-		}
-		#welcomeCard .mdc-card__media {
-			width: 93%;
-		}
-		.divider-left {
-			border-style: solid;
-			border-width: 0 0 0 1px;
-			border-color: rgba(0,0,0,0.12);
-		}
+	.mdc-layout-grid {
+		max-width: 700px;
+	}
+
+	#gamePanel .mdc-layout-grid__inner {
+		width: 100%;
+	}
+
+	#welcomeCard .mdc-card__media {
+		width: 93%;
+	}
+
+	.divider-left {
+		border-style: solid;
+		border-width: 0 0 0 1px;
+		border-color: var(--md-divider-color);
+	}
 }
+
 @media (min-width: 840px) {
-    .mdc-layout-grid {
-			max-width: 800px;
-		}
-		#welcomeCard .mdc-card__media {
-			width: 97%;
-		}
+	.mdc-layout-grid {
+		max-width: 800px;
+	}
+
+	#welcomeCard .mdc-card__media {
+		width: 97%;
+	}
 }
 
 /* Header */
 .mdc-top-app-bar__title {
 	margin-bottom: 30px;
 }
+
 .mdc-switch-label {
 	padding-right: 5px;
 }
+
 .mdc-tab__text-label {
 	font-size: 0.875rem;
 	font-weight: 500;
 }
+
 .mdc-tab__content {
 	--mdc-theme-primary: #004ba0;
 }
+
 .content {
 	display: none;
 }
+
 .content--active {
 	display: flex;
 }
@@ -97,6 +132,7 @@ a {
 	max-height: 240px;
 	margin: 16px;
 }
+
 #aboutCard .mdc-card__media {
 	background-image: url('../img/profile.webp');
 	width: 400%;
@@ -104,6 +140,7 @@ a {
 	border-radius: 50%;
 	margin: 16px;
 }
+
 #footer .mdc-card__media {
 	background-image: url('../img/charlie.webp');
 	width: 295px;
@@ -112,18 +149,29 @@ a {
 	border-radius: 50%;
 	margin: 16px;
 }
+
 .mdc-card__actions {
 	justify-content: flex-end;
 }
-#stuffCard div.flex, #footer .mdc-layout-grid__inner, #footer .mdc-layout-grid__cell {
+
+#stuffCard div.flex,
+#footer .mdc-layout-grid__inner,
+#footer .mdc-layout-grid__cell {
 	align-items: center;
 }
-#stuffCard .material-icons {
+
+#stuffCard md-icon {
+	color: rgba(0, 0, 0, 0.87);
 	font-size: 64px;
+	width: 64px;
+	height: 64px;
 	margin-right: 25px;
 }
-#footer .material-icons {
+
+#footer md-icon {
 	font-size: 64px;
+	width: 64px;
+	height: 64px;
 	margin: 16px;
 }
 
@@ -132,13 +180,15 @@ a {
 	justify-content: center;
 	align-items: center;
 }
+
 #rpsCard .mdc-typography--headline5 {
 	padding-top: 7px
 }
-#gameIcons .material-icons {
-	height: 100%;
-	font-size: 6em;
-	width: 1.25em;
+
+#gameIcons md-icon-button {
+	--md-icon-button-icon-size: 95px;
+	height: 120px;
+	width: 120px;
 	margin: 2px;
 }
 
@@ -147,8 +197,9 @@ a {
 	font-weight: 700;
 	margin: 0;
 }
+
 .toc {
-	border-left: 4px solid #1976d2;
+	border-left: 4px solid var(--md-sys-color-primary);
 	margin: 24px;
 	padding-left: 8px;
 }
@@ -159,11 +210,13 @@ a {
 	right: 21px;
 	bottom: 10px;
 }
+
 .second-fab {
 	position: fixed;
 	right: 21px;
 	bottom: 80px;
 }
+
 .hidden {
 	display: none !important;
 }

@@ -22,6 +22,8 @@
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1"
+		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="static/css/styles.css" rel="stylesheet" type="text/css">
@@ -53,22 +55,15 @@
 			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
 				<label for="darkModeToggler" class="mdc-typography mdc-theme--on-primary mdc-switch-label">Enable dark
 					theme</label>
-				<button id="darkModeToggler" class="mdc-switch mdc-switch--unselected" type="button" role="switch"
-					aria-checked="false">
-					<div class="mdc-switch__track"></div>
-					<div class="mdc-switch__handle-track">
-						<div class="mdc-switch__handle">
-							<div class="mdc-switch__shadow mdc-theme--surface">
-								<div class="mdc-elevation-overlay"></div>
-							</div>
-							<div class="mdc-switch__ripple"></div>
-						</div>
-					</div>
-				</button>
+				<md-switch id="darkModeToggler" aria-label="Toggle site dark mode"></md-switch>
 			</section>
 		</div>
 	</header>
-
+	<!-- <md-tabs style="padding-top: 140px">
+		<md-primary-tab id="homeTab" aria-controls="homePanel">Home</md-primary-tab>
+		<md-primary-tab id="gameTab" aria-controls="gamePanel">Games</md-primary-tab>
+		<md-primary-tab id="todoTab" aria-controls="todoPanel">To-Do</md-primary-tab>
+	</md-tabs> -->
 	<section id="tabs" class="mdc-tab-bar mdc-top-app-bar--prominent-fixed-adjust" data-mdc-auto-init="MDCTabBar"
 		role="tablist">
 		<div class="mdc-tab-scroller mdc-tab-scroller--align-start mdc-theme--surface">
@@ -106,13 +101,14 @@
 		</div>
 	</section>
 
-	<section id="homeTab" class="mdc-layout-grid content content--active mdc-theme--background mdc-theme--on-surface">
+	<section id="homePanel" class="mdc-layout-grid content content--active mdc-theme--background mdc-theme--on-surface"
+		role="tabpanel" aria-labelledby="homeTab">
 
 		<div class="mdc-layout-grid__inner">
 
 			<section id="welcomeCard" class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
-				<div class="mdc-layout-grid__inner mdc-card">
-
+				<div class="mdc-layout-grid__inner mdc-card" style="box-shadow: none;">
+					<md-elevation></md-elevation>
 					<div
 						class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-card__media mdc-card__media--square">
 						<!-- <md-tooltip>This is a vector image - it uses math to create a picture!</md-tooltip> -->
@@ -125,7 +121,7 @@
 								projects. If you have any suggestions, tell me!<br>Also, check out that sweet vector image on the left!
 							</p>
 						</div>
-						<hr>
+						<md-divider></md-divider>
 						<div class="mdc-card__actions">
 							<md-text-button href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank">Submit a
 								suggestion</md-text-button>
@@ -136,10 +132,11 @@
 			</section>
 
 			<section id="stuffCard" class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<md-elevation></md-elevation>
 				<div class="mdc-card-content">
 					<h3 class="mdc-typography mdc-typography--headline5">Stuff to check out</h3>
 					<div class="flex">
-						<span class="material-icons">share</span>
+						<md-icon>share</md-icon>
 						<div>
 							<h4 class="mdc-typography mdc-typography--subtitle2">Social media</h4>
 							<p class="mdc-typography mdc-typography--body2">Here's my <a href="https://github.com/nickcipriani"
@@ -147,9 +144,11 @@
 									class="mdc-theme--primary">LinkedIn</a>!</p>
 						</div>
 					</div>
-					<hr>
+					<md-divider></md-divider>
 					<div class="flex">
-						<a href="/school/vrpertable/index.html" class="material-icons mdc-theme--on-surface">assessment</a>
+						<a href="/school/vrpertable/index.html">
+							<md-icon>view_compact</md-icon>
+						</a>
 						<div>
 							<h4 class="mdc-typography mdc-typography--subtitle2">I created a VR Periodic Table for my Genius Hour
 								project!</h4>
@@ -158,9 +157,11 @@
 								experience)</p>
 						</div>
 					</div>
-					<hr>
+					<md-divider></md-divider>
 					<div class="flex">
-						<a href="/revuc16/index.html" class="material-icons mdc-theme--on-surface">camera_enhance</a>
+						<a href="/revuc16/index.html">
+							<md-icon>camera_enhance</md-icon>
+						</a>
 						<div>
 							<h4 class="mdc-typography mdc-typography--subtitle2">Megan, Richard, & I participated in a hackathon!</h4>
 							<p class="mdc-typography mdc-typography--body2">Click <a href="/revuc16/index.html"
@@ -171,6 +172,7 @@
 			</section>
 
 			<section id="aboutCard" class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<md-elevation></md-elevation>
 				<div class="flex">
 					<div class="mdc-card-content divider-right">
 						<h3 class="mdc-typography mdc-typography--headline5">About me</h3>
@@ -184,6 +186,7 @@
 			</section>
 
 			<section id="footer" class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<md-elevation></md-elevation>
 				<div class="mdc-layout-grid__inner mdc-card-content">
 					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop flex">
 						<div class="mdc-card__media mdc-card__media--square"></div>
@@ -193,7 +196,7 @@
 						</div>
 					</div>
 					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop flex">
-						<span class="material-icons">sentiment_very_satisfied</span>
+						<md-icon>sentiment_very_satisfied</md-icon>
 						<div>
 							<h4 class="mdc-typography mdc-typography--subtitle2">Congrats!</h4>
 							<p class="mdc-typography mdc-typography--body2">You've reached the bottom. Check out the game tab at the
@@ -207,38 +210,33 @@
 
 	</section>
 
-	<section id="rpsTab" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface">
+	<section id="gamePanel" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+		aria-labelledby="gameTab">
 
 		<div class="mdc-layout-grid__inner">
 
 			<section id="rpsCard" class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<md-elevation></md-elevation>
 				<div class="mdc-card-content">
 					<div class="flex rps-card__content">
 						<h3 class="mdc-typography mdc-typography--headline5">A game of Rock Paper Scissors</h3>
-						<button id="rpsGameSoundToggler" class="mdc-icon-button mdc-icon-button--on"
-							data-mdc-auto-init="MDCIconButtonToggle" aria-label="Toggle Game Sounds" aria-pressed="true">
-							<div class="mdc-icon-button__ripple"></div>
-							<i class="mdc-icon-button__icon mdc-icon-button__icon--on material-icons mdc-theme--primary">volume_up
-								<!--<md-tooltip>Mute game sounds</md-tooltip>-->
-							</i>
-							<i class="mdc-icon-button__icon material-icons mdc-theme--primary">volume_off
-								<!--<md-tooltip>Unmute game sounds</md-tooltip>-->
-							</i>
-						</button>
+						<md-icon-button toggle id="rpsGameSoundToggler" aria-label="Mute game sounds">
+							<md-icon>volume_up</md-icon>
+							<!--<md-tooltip>Mute game sounds</md-tooltip>-->
+							<md-icon slot="selected">volume_off</md-icon>
+							<!--<md-tooltip>Unmute game sounds</md-tooltip>-->
+						</md-icon-button>
 					</div>
 					<div id="gameIcons" class="flex rps-card__content">
-						<button id="rockButton" class="mdc-icon-button material-icons mdc-theme--primary">
-							<div class="mdc-icon-button__ripple"></div>
-							lens
-						</button>
-						<button id="paperButton" class="mdc-icon-button material-icons mdc-theme--primary">
-							<div class="mdc-icon-button__ripple"></div>
-							content_paste
-						</button>
-						<button id="scissorsButton" class="mdc-icon-button material-icons mdc-theme--primary">
-							<div class="mdc-icon-button__ripple"></div>
-							content_cut
-						</button>
+						<md-icon-button id="rockButton" aria-label="Choose rock">
+							<md-icon>public</md-icon>
+						</md-icon-button>
+						<md-icon-button id="paperButton" aria-label="Choose paper">
+							<md-icon>description</md-icon>
+						</md-icon-button>
+						<md-icon-button id="scissorsButton" aria-label="Choose scissors">
+							<md-icon>cut</md-icon>
+						</md-icon-button>
 						<!-- Need progress indicator -->
 					</div>
 					<p id="textUserChoice" class="mdc-typography mdc-typography--body1"></p>
@@ -251,11 +249,13 @@
 
 	</section>
 
-	<section id="todoTab" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface">
+	<section id="todoPanel" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+		aria-labelledby="todoTab">
 
 		<div class="mdc-layout-grid__inner">
 
 			<section id="todoCard" class="mdc-card mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<md-elevation></md-elevation>
 				<div class="mdc-card-content">
 					<h3 class="mdc-typography mdc-typography--headline5">To-do</h3>
 					<p class="mdc-typography mdc-typography--body2">A list of suggestions received that are planned, and some
@@ -293,18 +293,21 @@
 	</section>
 
 	<section id="fabs">
-		<button id="toggleBackgroundMusicFAB" class="mdc-fab second-fab" data-mdc-auto-init="MDCRipple"
-			aria-label="Background Music Toggle">
-			<span class="mdc-fab__ripple"></span>
-			<span id="backgroundMusicOn" class="mdc-fab__icon mdc-theme--on-secondary material-icons">music_note</span>
-			<span id="backgroundMusicOff" class="mdc-fab__icon mdc-theme--on-secondary material-icons hidden">stop</span>
-			<!--<md-tooltip md-direction="left">Music courtesy of bensound.com</md-tooltip>-->
-		</button>
-		<a href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank" class="mdc-fab first-fab"
+		<md-fab variant="secondary" id="toggleBackgroundMusicFAB" class="second-fab" aria-label="Toggle site music">
+			<md-icon slot="icon" id="backgroundMusicOn">music_note</md-icon>
+			<md-icon slot="icon" id="backgroundMusicOff" class="hidden">stop</md-icon>
+			<!-- <md-tooltip md-direction="left">Music courtesy of bensound.com</md-tooltip> -->
+		</md-fab>
+		<a href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank">
+			<md-fab variant="secondary" class="first-fab" aria-label="Send suggestion email">
+				<md-icon slot="icon">mail</md-icon>
+			</md-fab>
+		</a>
+		<!-- <a href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank" class="mdc-fab first-fab"
 			data-mdc-auto-init="MDCRipple" aria-label="Email">
 			<div class="mdc-fab__ripple"></div>
 			<span class="mdc-fab__icon mdc-theme--on-secondary material-icons">email</span>
-		</a>
+		</a> -->
 	</section>
 </body>
 

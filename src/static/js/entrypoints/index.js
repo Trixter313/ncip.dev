@@ -1,4 +1,13 @@
+import '@material/web/tabs/tabs.js';
+import '@material/web/tabs/primary-tab.js';
+import '@material/web/tabs/secondary-tab.js';
 import '@material/web/button/text-button.js';
+import '@material/web/switch/switch.js';
+import '@material/web/fab/fab.js';
+import '@material/web/icon/icon.js';
+import '@material/web/divider/divider.js';
+import '@material/web/elevation/elevation.js';
+import '@material/web/iconbutton/icon-button.js';
 
 function startup() {
 	if ("serviceWorker" in navigator) {
@@ -20,9 +29,6 @@ function startup() {
 		document.querySelector('.content--active').classList.remove('content--active');
 		contentEls[event.detail.index].classList.add('content--active');
 	});
-
-	const iconButtonRipple = new mdc.ripple.MDCRipple(document.querySelector('.mdc-icon-button'));
-	iconButtonRipple.unbounded = true;
 
 	window.mdc.autoInit();
 }
@@ -57,10 +63,8 @@ const rpsGameSoundToggler = document.getElementById("rpsGameSoundToggler");
 rpsGameSoundToggler.addEventListener("click", function () {
 	if (rpsWinSound.muted) {
 		toggleRPSSoundMute(false);
-		rpsGameSoundToggler.classList.add("mdc-icon-button--on");
 	} else {
 		toggleRPSSoundMute(true);
-		rpsGameSoundToggler.classList.remove("mdc-icon-button--on");
 	}
 
 	function toggleRPSSoundMute(isMuted) {
@@ -75,23 +79,20 @@ darkModeToggler.addEventListener("click", function () {
 	const currentColor = getComputedStyle(document.documentElement).getPropertyValue("--mdc-theme-background");
 	// const hrs =
 	if (currentColor === "#fafafa") {
-		newColors("#121212", "#1d1d1d", "rgba(255,255,255,.87)", "rgba(255,255,255,.6)");
-		darkModeToggler.classList.add("mdc-switch--selected");
-		darkModeToggler.classList.remove("mdc-switch--unselected");
+		newColors("#121212", "#1d1d1d", "rgba(255,255,255,.87)", "rgba(255, 255, 255, 0.15)", "rgba(255,255,255,.6)");
 		console.log("Switched to dark mode.");
 	} else if (currentColor === "#121212") {
-		newColors("#fafafa", "#fff", "rgba(0,0,0,0.87)", "rgba(0,0,0,.6)");
-		darkModeToggler.classList.add("mdc-switch--unselected");
-		darkModeToggler.classList.remove("mdc-switch--selected");
+		newColors("#fafafa", "#fff", "rgba(0,0,0,0.87)", "rgba(0, 0, 0, 0.15)", "rgba(0,0,0,.6)");
 		console.log("Switched to light mode.");
 	} else {
 		console.log("Something went wrong with toggling dark mode.");
 	}
 
-	function newColors(background, surface, onSurface, primaryOnLight) {
+	function newColors(background, surface, onSurface, dividerColor, primaryOnLight) {
 		document.documentElement.style.setProperty("--mdc-theme-background", background);
 		document.documentElement.style.setProperty("--mdc-theme-surface", surface);
 		document.documentElement.style.setProperty("--mdc-theme-on-surface", onSurface);
+		document.documentElement.style.setProperty("--md-divider-color", dividerColor);
 		document.documentElement.style.setProperty("--mdc-theme-text-primary-on-light", primaryOnLight);
 	}
 });
