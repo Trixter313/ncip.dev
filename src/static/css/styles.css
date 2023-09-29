@@ -1,5 +1,7 @@
 /* Global CSS */
 :root {
+	--md-sys-color-primary: #1976d2;
+
   --mdc-theme-primary: #1976d2;
   --mdc-theme-secondary: #00e5ff;
 	--mdc-theme-on-secondary: #000000;
@@ -90,20 +92,20 @@ a {
 
 /* Home Tab */
 #welcomeCard .mdc-card__media {
-	background-image: url('images/logo.svg');
+	background-image: url('../img/logo.svg');
 	background-size: contain;
 	max-height: 240px;
 	margin: 16px;
 }
 #aboutCard .mdc-card__media {
-	background-image: url('images/profile.webp');
+	background-image: url('../img/profile.webp');
 	width: 400%;
 	max-width: 180px;
 	border-radius: 50%;
 	margin: 16px;
 }
 #footer .mdc-card__media {
-	background-image: url('images/charlie.webp');
+	background-image: url('../img/charlie.webp');
 	width: 295px;
 	height: 64px;
 	max-width: 64px;

@@ -1,3 +1,5 @@
+import '@material/web/button/text-button.js';
+
 function startup() {
 	if ("serviceWorker" in navigator) {
 		window.addEventListener("load", function () {
@@ -31,7 +33,7 @@ let backgroundMusic
 const toggleBackgroundMusicFAB = document.getElementById("toggleBackgroundMusicFAB");
 toggleBackgroundMusicFAB.addEventListener("click", function () {
 	if (typeof backgroundMusic == "undefined") {
-		backgroundMusic = new Audio("audio/bensound-memories.mp3");
+		backgroundMusic = new Audio("static/audio/bensound-memories.mp3");
 	}
 	const musicOnIcon = document.getElementById("backgroundMusicOn");
 	const musicOffIcon = document.getElementById("backgroundMusicOff");
@@ -101,9 +103,9 @@ let rpsTieSound
 const gameTab = document.getElementById("mdc-tab-2");
 gameTab.addEventListener("click", function () {
 	if (typeof rpsWinSound === "undefined") {
-		rpsWinSound = new Audio("audio/Trill.ogg");
-		rpsLoseSound = new Audio("audio/Clink.ogg");
-		rpsTieSound = new Audio("audio/Strum.ogg");
+		rpsWinSound = new Audio("static/audio/Trill.ogg");
+		rpsLoseSound = new Audio("static/audio/Clink.ogg");
+		rpsTieSound = new Audio("static/audio/Strum.ogg");
 	}
 });
 

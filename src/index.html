@@ -6,7 +6,7 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP5Q0677DR"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 		gtag('config', 'G-BP5Q0677DR');
 	</script>
@@ -18,8 +18,8 @@
 		content="Nick's Playground is a place for me to practice my programming and problem solving skills. I host many projects here that you are free to browse.">
 
 	<link rel="manifest" href="manifest.json" />
-	<link href="static/css/material-components-web.min.css" type="text/css" rel="stylesheet preload preconnect dns-prefetch"
-		as="style">
+	<link href="static/css/material-components-web.min.css" type="text/css"
+		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
@@ -51,8 +51,10 @@
 				<h1 class="mdc-top-app-bar__title mdc-typography--headline4">Nick's Playground</h1>
 			</section>
 			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-				<label for="darkModeToggler" class="mdc-typography mdc-theme--on-primary mdc-switch-label">Enable dark theme</label>
-				<button id="darkModeToggler" class="mdc-switch mdc-switch--unselected" type="button" role="switch" aria-checked="false">
+				<label for="darkModeToggler" class="mdc-typography mdc-theme--on-primary mdc-switch-label">Enable dark
+					theme</label>
+				<button id="darkModeToggler" class="mdc-switch mdc-switch--unselected" type="button" role="switch"
+					aria-checked="false">
 					<div class="mdc-switch__track"></div>
 					<div class="mdc-switch__handle-track">
 						<div class="mdc-switch__handle">
@@ -125,11 +127,8 @@
 						</div>
 						<hr>
 						<div class="mdc-card__actions">
-							<a href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank"
-								class="mdc-button mdc-card__action mdc-card__action--button" data-mdc-auto-init="MDCRipple">
-								<div class="mdc-button__ripple"></div>
-								<span class="mdc-button__label">Submit a suggestion</span>
-							</a>
+							<md-text-button href="mailto:suggestion@cip.dev?subject=Suggestion" target="_blank">Submit a
+								suggestion</md-text-button>
 						</div>
 					</div>
 
@@ -175,7 +174,8 @@
 				<div class="flex">
 					<div class="mdc-card-content divider-right">
 						<h3 class="mdc-typography mdc-typography--headline5">About me</h3>
-						<p class="mdc-typography mdc-typography--body2">I graduated with a bachelors in Computer Science in 2023 and enjoy programming
+						<p class="mdc-typography mdc-typography--body2">I graduated with a bachelors in Computer Science in 2023 and
+							enjoy programming
 							as a hobby. It's fun to work your way through issues you will inevitably encounter and learn
 							something new in the process!</p>
 					</div>
