@@ -12,7 +12,7 @@ import { minify as minifyHTML } from 'html-minifier';
 const config = {
 	input: [
 		'src/static/js/entrypoints/404.js',
-		'src/static/js/entrypoints/about-us.js'
+		'src/static/js/entrypoints/index.js'
 	],
 	output: {
 		dir: 'dist/static/js/entrypoints',
