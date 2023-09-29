@@ -57,6 +57,7 @@ a {
 .mdc-card {
 	/* To use material component elevate instead */
 	box-shadow: none;
+	border-radius: 14px;
 }
 
 .mdc-card-content {
