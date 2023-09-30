@@ -109,6 +109,15 @@ a {
 	padding-right: 5px;
 }
 
+#tabBarContainer {
+	background-color: var(--md-sys-color-surface);
+}
+
+#tabBar {
+	padding-top: 128px;
+	max-width: 400px;
+}
+
 .mdc-tab__text-label {
 	font-size: 0.875rem;
 	font-weight: 500;
