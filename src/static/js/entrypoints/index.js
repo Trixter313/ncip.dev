@@ -9,36 +9,36 @@ import '@material/web/divider/divider.js';
 import '@material/web/elevation/elevation.js';
 import '@material/web/iconbutton/icon-button.js';
 
-function startup() {
-	if ("serviceWorker" in navigator) {
-		window.addEventListener("load", function () {
-			navigator.serviceWorker
-				.register("/serviceWorker.js")
-				.then(function (registration) {
-					console.log("ServiceWorker registration successful with scope: ", registration.scope);
-				}, function (err) {
-					console.log("ServiceWorker registration failed: ", err);
-				});
-		});
-	}
-
-	const MDTabs = document.getElementById("tabBar");
-	let panels = document.querySelectorAll('[role="tabpanel"]');
-	MDTabs.addEventListener('change', () => {
-		let activeTabIndex = MDTabs.activeTabIndex
-		let tabs = MDTabs.children;
-
-		for (let i = 0; i < tabs.length; i++) {
-			if (i == activeTabIndex) {
-				panels[i].classList.remove("hidden");
-			} else {
-				panels[i].classList.add("hidden");
-			}
-		}
+// function startup() {
+if ("serviceWorker" in navigator) {
+	window.addEventListener("load", function () {
+		navigator.serviceWorker
+			.register("/serviceWorker.js")
+			.then(function (registration) {
+				console.log("ServiceWorker registration successful with scope: ", registration.scope);
+			}, function (err) {
+				console.log("ServiceWorker registration failed: ", err);
+			});
 	});
 }
 
-startup();
+const MDTabs = document.getElementById("tabBar");
+let panels = document.querySelectorAll('[role="tabpanel"]');
+MDTabs.addEventListener('change', () => {
+	let activeTabIndex = MDTabs.activeTabIndex
+	let tabs = MDTabs.children;
+
+	for (let i = 0; i < tabs.length; i++) {
+		if (i == activeTabIndex) {
+			panels[i].classList.remove("hidden");
+		} else {
+			panels[i].classList.add("hidden");
+		}
+	}
+});
+// }
+
+// startup();
 
 let backgroundMusic
 const toggleBackgroundMusicFAB = document.getElementById("toggleBackgroundMusicFAB");
@@ -79,26 +79,60 @@ rpsGameSoundToggler.addEventListener("click", function () {
 	}
 });
 
+var root = document.querySelector(':root');
+function newColors(background, surface, onSurface, dividerColor, primaryOnLight) {
+	document.documentElement.style.setProperty("--mdc-theme-background", background);
+	document.documentElement.style.setProperty("--md-sys-color-surface", surface);
+	document.documentElement.style.setProperty("--md-primary-tab-label-text-color", onSurface);
+	document.documentElement.style.setProperty("--md-primary-tab-hover-label-text-color", onSurface);
+	document.documentElement.style.setProperty("--mdc-theme-surface", surface);
+	document.documentElement.style.setProperty("--mdc-theme-on-surface", onSurface);
+	document.documentElement.style.setProperty("--md-divider-color", dividerColor);
+	document.documentElement.style.setProperty("--mdc-theme-text-primary-on-light", primaryOnLight);
+}
+
+function setLightTheme() {
+	newColors("#fafafa", "#fff", "rgba(0,0,0,0.87)", "rgba(0, 0, 0, 0.15)", "rgba(0,0,0,.6)");
+}
+
+function setDarkTheme() {
+	newColors("#121212", "#1d1d1d", "rgba(255,255,255,.87)", "rgba(255, 255, 255, 0.15)", "rgba(255,255,255,.6)");
+}
+
 const darkModeToggler = document.getElementById("darkModeToggler");
+
+// Set theme to dark if no option in cache and user prefers dark or if dark was their last selected theme
+switch (localStorage.getItem("lastUsedTheme")) {
+	case null:
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			darkModeToggler.setAttribute("selected", true);
+			setDarkTheme();
+		}
+		break;
+
+	case "dark":
+		darkModeToggler.setAttribute("selected", true);
+		setDarkTheme();
+		break;
+
+	default:
+		console.log("There was an error setting the page theme on load.");
+		break;
+}
+
 darkModeToggler.addEventListener("click", function () {
 	const currentColor = getComputedStyle(document.documentElement).getPropertyValue("--mdc-theme-background");
 	// const hrs =
 	if (currentColor === "#fafafa") {
-		newColors("#121212", "#1d1d1d", "rgba(255,255,255,.87)", "rgba(255, 255, 255, 0.15)", "rgba(255,255,255,.6)");
+		setDarkTheme();
+		localStorage.setItem("lastUsedTheme", "dark");
 		console.log("Switched to dark mode.");
 	} else if (currentColor === "#121212") {
-		newColors("#fafafa", "#fff", "rgba(0,0,0,0.87)", "rgba(0, 0, 0, 0.15)", "rgba(0,0,0,.6)");
+		setLightTheme();
+		localStorage.setItem("lastUsedTheme", "light");
 		console.log("Switched to light mode.");
 	} else {
-		console.log("Something went wrong with toggling dark mode.");
-	}
-
-	function newColors(background, surface, onSurface, dividerColor, primaryOnLight) {
-		document.documentElement.style.setProperty("--mdc-theme-background", background);
-		document.documentElement.style.setProperty("--mdc-theme-surface", surface);
-		document.documentElement.style.setProperty("--mdc-theme-on-surface", onSurface);
-		document.documentElement.style.setProperty("--md-divider-color", dividerColor);
-		document.documentElement.style.setProperty("--mdc-theme-text-primary-on-light", primaryOnLight);
+		console.log("Something went wrong with toggling the color scheme.");
 	}
 });
 

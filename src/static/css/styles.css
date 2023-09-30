@@ -118,14 +118,6 @@ a {
 	--mdc-theme-primary: #004ba0;
 }
 
-.content {
-	display: none;
-}
-
-.content--active {
-	display: flex;
-}
-
 /* Home Tab */
 #welcomeCard .mdc-card__media {
 	background-image: url('../img/logo.svg');
