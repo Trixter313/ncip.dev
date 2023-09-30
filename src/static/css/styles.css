@@ -1,16 +1,22 @@
 /* Global CSS */
 :root {
-	--md-sys-color-primary: #1976d2;
-	--md-sys-color-secondary: #00e5ff;
+	--md-sys-color-primary: hsl(210, 79%, 46%);
+	--md-sys-color-secondary: hsl(186, 100%, 50%);
 	/* --md-fab-container-color: #00e5ff; */
 	--md-icon-font: 'Material Symbols Rounded';
 	--md-sys-color-secondary-container: #00e5ff;
-	--md-fab-icon-color: #1c3c93;
+	--md-fab-icon-color: #254bb4;
 	--md-switch-selected-track-color: #0c3b6a;
+	--md-switch-selected-focus-track-color: #0c3b6a;
+	--md-switch-selected-hover-track-color: #0c3b6a;
+	--md-switch-selected-pressed-track-color: #0c3b6a;
 	--md-elevation-level: 1;
 	--md-divider-color: rgba(0, 0, 0, 0.15);
 	--md-divider-thickness: 0.5px;
 	--md-icon-button-icon-color: var(--md-sys-color-primary);
+	--md-icon-button-hover-icon-color: var(--md-sys-color-primary);
+	--md-icon-button-focus-icon-color: var(--md-sys-color-primary);
+	--md-icon-button-pressed-icon-color: var(--md-sys-color-primary);
 
 	--mdc-theme-primary: #1976d2;
 	--mdc-theme-secondary: #00e5ff;
@@ -107,6 +113,13 @@ a {
 
 .mdc-switch-label {
 	padding-right: 5px;
+	padding-top: 5px;
+}
+
+label[for="darkModeToggler"] md-icon {
+	font-size: 40px;
+	width: 40px;
+	height: 40px;
 }
 
 #tabBarContainer {
@@ -163,7 +176,7 @@ a {
 }
 
 #stuffCard md-icon {
-	color: rgba(0, 0, 0, 0.87);
+	color: var(--mdc-theme-on-surface);
 	font-size: 64px;
 	width: 64px;
 	height: 64px;
