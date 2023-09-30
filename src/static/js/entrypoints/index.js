@@ -22,15 +22,20 @@ function startup() {
 		});
 	}
 
-	var tabBar = new mdc.tabBar.MDCTabBar(document.querySelector('.mdc-tab-bar'));
-	var contentEls = document.querySelectorAll('.content');
+	const MDTabs = document.getElementById("tabBar");
+	let panels = document.querySelectorAll('[role="tabpanel"]');
+	MDTabs.addEventListener('change', () => {
+		let activeTabIndex = MDTabs.activeTabIndex
+		let tabs = MDTabs.children;
 
-	tabBar.listen('MDCTabBar:activated', function (event) {
-		document.querySelector('.content--active').classList.remove('content--active');
-		contentEls[event.detail.index].classList.add('content--active');
+		for (let i = 0; i < tabs.length; i++) {
+			if (i == activeTabIndex) {
+				panels[i].classList.remove("hidden");
+			} else {
+				panels[i].classList.add("hidden");
+			}
+		}
 	});
-
-	window.mdc.autoInit();
 }
 
 startup();
@@ -101,7 +106,7 @@ let rpsWinSound
 let rpsLoseSound
 let rpsTieSound
 
-const gameTab = document.getElementById("mdc-tab-2");
+const gameTab = document.getElementById("gameTab");
 gameTab.addEventListener("click", function () {
 	if (typeof rpsWinSound === "undefined") {
 		rpsWinSound = new Audio("static/audio/Trill.ogg");

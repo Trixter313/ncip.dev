@@ -41,7 +41,7 @@
 	<!-- Tile icon for Windows -->
 	<link href="static/img/icon-192x192.png" rel="msapplication-square192x192logo">
 
-	<script defer src="static/js/material-components-web.min.js"></script>
+	<!-- <script defer src="static/js/material-components-web.min.js"></script> -->
 	<script type="module" src="static/js/entrypoints/index.js"></script>
 </head>
 
@@ -59,12 +59,12 @@
 			</section>
 		</div>
 	</header>
-	<!-- <md-tabs style="padding-top: 140px">
+	<md-tabs id="tabBar" style="padding-top: 140px">
 		<md-primary-tab id="homeTab" aria-controls="homePanel">Home</md-primary-tab>
 		<md-primary-tab id="gameTab" aria-controls="gamePanel">Games</md-primary-tab>
 		<md-primary-tab id="todoTab" aria-controls="todoPanel">To-Do</md-primary-tab>
-	</md-tabs> -->
-	<section id="tabs" class="mdc-tab-bar mdc-top-app-bar--prominent-fixed-adjust" data-mdc-auto-init="MDCTabBar"
+	</md-tabs>
+	<!-- <section id="tabs" class="mdc-tab-bar mdc-top-app-bar--prominent-fixed-adjust" data-mdc-auto-init="MDCTabBar"
 		role="tablist">
 		<div class="mdc-tab-scroller mdc-tab-scroller--align-start mdc-theme--surface">
 			<div class="mdc-tab-scroller__scroll-area">
@@ -99,9 +99,9 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
-	<section id="homePanel" class="mdc-layout-grid content content--active mdc-theme--background mdc-theme--on-surface"
+	<section id="homePanel" class="mdc-layout-grid mdc-theme--background mdc-theme--on-surface"
 		role="tabpanel" aria-labelledby="homeTab">
 
 		<div class="mdc-layout-grid__inner">
@@ -210,7 +210,7 @@
 
 	</section>
 
-	<section id="gamePanel" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+	<section id="gamePanel" class="hidden mdc-layout-grid mdc-theme--background mdc-theme--on-surface" role="tabpanel"
 		aria-labelledby="gameTab">
 
 		<div class="mdc-layout-grid__inner">
@@ -249,7 +249,7 @@
 
 	</section>
 
-	<section id="todoPanel" class="mdc-layout-grid content mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+	<section id="todoPanel" class="hidden mdc-layout-grid mdc-theme--background mdc-theme--on-surface" role="tabpanel"
 		aria-labelledby="todoTab">
 
 		<div class="mdc-layout-grid__inner">
