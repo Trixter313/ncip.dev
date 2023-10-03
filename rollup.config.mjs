@@ -42,7 +42,7 @@ const config = {
 							sortClassName: true,
 							useShortDoctype: true,
 							collapseInlineTagWhitespace: true,
-							collapseWhitespace: true,
+							// collapseWhitespace: true,
 							minifyCSS: true,
 						});
 
