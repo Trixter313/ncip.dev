@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "rm -rf dist && rollup -c dev-rollup.config.mjs -w",
     "build": "rm -rf dist && rollup -c",
-    "web": "web-dev-server --node-resolve --open --watch --root-dir dist"
+    "web": "web-dev-server --node-resolve --open --watch --root-dir src"
   },
   "author": "",
   "license": "ISC",
