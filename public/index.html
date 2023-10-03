@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang=en dir=ltr>
+
+<head>
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP5Q0677DR"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-BP5Q0677DR');
+	</script>
+
+	<meta charset=utf-8>
+	<meta name=viewport content="width=device-width,initial-scale=1">
+	<title>Nick's Playground</title>
+	<meta name=Description content="Nick's Playground is a place for me to practice my programming and problem solving skills. I host many projects here that you are free to browse.">
+
+	<link rel=manifest href=manifest.json>
+	<link href=static/css/material-components-web.min.css rel="stylesheet preload preconnect dns-prefetch" as=style>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet preload preconnect dns-prefetch" as=style>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet preload preconnect dns-prefetch" as=style>
+	<link href=static/css/styles.css rel=stylesheet>
+
+	<meta name=application-name content="Nick's Playground">
+	<meta id=chromeTheme name=theme-color content=#1976D2>
+	
+	<meta name=mobile-web-app-capable content=yes>
+	<link href=static/img/icon-192x192.png rel=icon sizes=192x192>
+	
+	<meta name=apple-mobile-web-app-capable content=yes>
+	<meta name=apple-mobile-web-app-status-bar-style content=black>
+	<meta name=apple-mobile-web-app-title content="Nick's Playground">
+	<link href=static/img/icon-192x192.png rel=apple-touch-icon sizes=192x192>
+	
+	<link href=static/img/icon-192x192.png rel=msapplication-square192x192logo>
+
+	
+	<script type=module src=static/js/entrypoints/index.js></script>
+</head>
+
+<body class=mdc-theme--background>
+	<header id=topAppBar class="mdc-theme--on-primary mdc-top-app-bar mdc-top-app-bar--fixed mdc-top-app-bar--prominent" data-mdc-auto-init=MDCTopAppBar>
+		<div class=mdc-top-app-bar__row>
+			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+				<h1 class="mdc-top-app-bar__title mdc-typography--headline4">Nick's Playground</h1>
+			</section>
+			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+				<label for=darkModeToggler class="mdc-typography mdc-switch-label mdc-theme--on-primary">
+					<md-icon>dark_mode</md-icon>
+				</label>
+				<md-switch id=darkModeToggler aria-label="Toggle site dark mode"></md-switch>
+			</section>
+		</div>
+	</header>
+	<div id=tabBarContainer>
+		<md-tabs id=tabBar>
+			<md-primary-tab id=homeTab aria-controls=homePanel>Home</md-primary-tab>
+			<md-primary-tab id=gameTab aria-controls=gamePanel>Games</md-primary-tab>
+			<md-primary-tab id=todoTab aria-controls=todoPanel>To-Do</md-primary-tab>
+		</md-tabs>
+	</div>
+
+	<section id=homePanel class="mdc-theme--background mdc-layout-grid mdc-theme--on-surface" role=tabpanel aria-labelledby=homeTab>
+
+		<div class=mdc-layout-grid__inner>
+
+			<section id=welcomeCard class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+				<div class="mdc-card mdc-layout-grid__inner">
+					<md-elevation></md-elevation>
+					<div class="mdc-layout-grid__cell mdc-card__media mdc-card__media--square mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-desktop">
+						
+					</div>
+					<div class="mdc-layout-grid__cell divider-left mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-8-desktop">
+						<div class=mdc-card-content>
+							<h3 class="mdc-typography mdc-typography--headline5 mdc-theme--on-surface">Welcome!</h3>
+							<p class="mdc-typography mdc-typography--body2">This is a space for me to experiment and host my
+								projects. If you have any suggestions, tell me!<br>Also, check out that sweet vector image on the left!
+							</p>
+						</div>
+						<md-divider></md-divider>
+						<div class=mdc-card__actions>
+							<md-text-button href="mailto:suggestion@cip.dev?subject=Suggestion" target=_blank>Submit a
+								suggestion</md-text-button>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section id=stuffCard class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
+				<md-elevation></md-elevation>
+				<div class=mdc-card-content>
+					<h3 class="mdc-typography mdc-typography--headline5">Stuff to check out</h3>
+					<div class=flex>
+						<md-icon>share</md-icon>
+						<div>
+							<h4 class="mdc-typography mdc-typography--subtitle2">Social media</h4>
+							<p class="mdc-typography mdc-typography--body2">Here's my <a href=https://github.com/nickcipriani class=mdc-theme--primary>Github</a>, and here's my <a href=https://www.linkedin.com/in/ncipriani/ class=mdc-theme--primary>LinkedIn</a>!</p>
+						</div>
+					</div>
+					<md-divider></md-divider>
+					<div class=flex>
+						<a href=/school/vrpertable/index.html>
+							<md-icon>view_compact</md-icon>
+						</a>
+						<div>
+							<h4 class="mdc-typography mdc-typography--subtitle2">I created a VR Periodic Table for my Genius Hour
+								project!</h4>
+							<p class="mdc-typography mdc-typography--body2">You can check the <a href=/school/vrpertable/index.html class=mdc-theme--primary>VR Periodic Table out here</a>. (Use a VR headset for the best viewing
+								experience)</p>
+						</div>
+					</div>
+					<md-divider></md-divider>
+					<div class=flex>
+						<a href=/revuc16/index.html>
+							<md-icon>camera_enhance</md-icon>
+						</a>
+						<div>
+							<h4 class="mdc-typography mdc-typography--subtitle2">Megan, Richard, & I participated in a hackathon!</h4>
+							<p class="mdc-typography mdc-typography--body2">Click <a href=/revuc16/index.html class=mdc-theme--primary>here for the meme generator</a>, Meme Me! (Requires a webcam)</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id=aboutCard class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
+				<md-elevation></md-elevation>
+				<div class=flex>
+					<div class="mdc-card-content divider-right">
+						<h3 class="mdc-typography mdc-typography--headline5">About me</h3>
+						<p class="mdc-typography mdc-typography--body2">I graduated with a bachelors in Computer Science in 2023 and
+							enjoy programming
+							as a hobby. It's fun to work your way through issues you will inevitably encounter and learn
+							something new in the process!</p>
+					</div>
+					<div class="mdc-card__media mdc-card__media--square"></div>
+				</div>
+			</section>
+
+			<section id=footer class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
+				<md-elevation></md-elevation>
+				<div class="mdc-card-content mdc-layout-grid__inner">
+					<div class="mdc-layout-grid__cell flex mdc-layout-grid__cell--span-6-desktop">
+						<div class="mdc-card__media mdc-card__media--square"></div>
+						<div>
+							<h4 class="mdc-typography mdc-typography--subtitle2">Doggo</h4>
+							<p class="mdc-typography mdc-typography--body2">Here's a picture of my dog, Charlie!</p>
+						</div>
+					</div>
+					<div class="mdc-layout-grid__cell flex mdc-layout-grid__cell--span-6-desktop">
+						<md-icon>sentiment_very_satisfied</md-icon>
+						<div>
+							<h4 class="mdc-typography mdc-typography--subtitle2">Congrats!</h4>
+							<p class="mdc-typography mdc-typography--body2">You've reached the bottom. Check out the game tab at the
+								top!</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+	</section>
+
+	<section id=gamePanel class="mdc-theme--background mdc-layout-grid mdc-theme--on-surface hidden" role=tabpanel aria-labelledby=gameTab>
+
+		<div class=mdc-layout-grid__inner>
+
+			<section id=rpsCard class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
+				<md-elevation></md-elevation>
+				<div class=mdc-card-content>
+					<div class="flex rps-card__content">
+						<h3 class="mdc-typography mdc-typography--headline5">A game of Rock Paper Scissors</h3>
+						<md-icon-button toggle id=rpsGameSoundToggler aria-label="Mute game sounds">
+							<md-icon>volume_up</md-icon>
+							
+							<md-icon slot=selected>volume_off</md-icon>
+							
+						</md-icon-button>
+					</div>
+					<div id=gameIcons class="flex rps-card__content">
+						<md-icon-button id=rockButton aria-label="Choose rock">
+							<md-icon>public</md-icon>
+						</md-icon-button>
+						<md-icon-button id=paperButton aria-label="Choose paper">
+							<md-icon>description</md-icon>
+						</md-icon-button>
+						<md-icon-button id=scissorsButton aria-label="Choose scissors">
+							<md-icon>cut</md-icon>
+						</md-icon-button>
+						
+					</div>
+					<p id=textUserChoice class="mdc-typography mdc-typography--body1"></p>
+					<p id=textComputerChoice class="mdc-typography mdc-typography--body1"></p>
+					<p id=textResult class="mdc-typography mdc-typography--body1"></p>
+				</div>
+			</section>
+
+		</div>
+
+	</section>
+
+	<section id=todoPanel class="mdc-theme--background mdc-layout-grid mdc-theme--on-surface hidden" role=tabpanel aria-labelledby=todoTab>
+
+		<div class=mdc-layout-grid__inner>
+
+			<section id=todoCard class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-card">
+				<md-elevation></md-elevation>
+				<div class=mdc-card-content>
+					<h3 class="mdc-typography mdc-typography--headline5">To-do</h3>
+					<p class="mdc-typography mdc-typography--body2">A list of suggestions received that are planned, and some
+						explanations.</p>
+					<div class=toc>
+						<h4 class="mdc-typography mdc-typography--overline toc-heading">Contents</h4>
+						<h5 class="mdc-typography mdc-typography--body1 mdc-theme--primary">Think of more to-do's</h5>
+						<h5 class="mdc-typography mdc-typography--body1 mdc-theme--primary">Add as many features as possible to the
+							RPS game</h5>
+						<h5 class="mdc-typography mdc-typography--body1 mdc-theme--primary">Make a minigame</h5>
+						<h5 class="mdc-typography mdc-typography--body1 mdc-theme--primary">Add as many MD components as possible!
+						</h5>
+						
+					</div>
+					<h4 class="mdc-typography mdc-typography--headline6">Think of more to-do's</h4>
+					<p class="mdc-typography mdc-typography--body2">I'm always looking for ways to improve the site and fun
+						projects to build. If you have any ideas, I'd love to hear about them!</p>
+					<h4 class="mdc-typography mdc-typography--headline6">Add as many features as possible to the RPS game</h4>
+					<p class="mdc-typography mdc-typography--body2">Currently planned: a score counter, re-adding theme changing
+						to whole page, loading animation (✓), and a mute button (✓)!</p>
+					<h4 class="mdc-typography mdc-typography--headline6">Make a minigame</h4>
+					<p class="mdc-typography mdc-typography--body2">Create a fun little experiment to pass the time. Thanks for
+						the suggestion Kalyani!</p>
+					<h4 class="mdc-typography mdc-typography--headline6">Add as many MD components as possible!</h4>
+					<p class="mdc-typography mdc-typography--body2">Ever heard of Material Design? It's a set of guidelines
+						created by Google to make a design language that is versatile and looks good on all platforms, from watches
+						to cars and everything between! This site uses MD and many of it's components such as the toolbar at the top
+						and the shadows under the cards. One thing I have in mind is adding a floating action button to submit a
+						suggestion from anywhere on the site! Doesn't that sound fancy?</p>
+				</div>
+			</section>
+
+		</div>
+
+	</section>
+
+	<section id=fabs>
+		<md-fab variant=secondary id=toggleBackgroundMusicFAB class=second-fab aria-label="Toggle site music">
+			<md-icon slot=icon id=backgroundMusicOn>music_note</md-icon>
+			<md-icon slot=icon id=backgroundMusicOff class=hidden>stop</md-icon>
+			
+		</md-fab>
+		<a href="mailto:suggestion@cip.dev?subject=Suggestion" target=_blank>
+			<md-fab variant=secondary class=first-fab aria-label="Send suggestion email">
+				<md-icon slot=icon>mail</md-icon>
+			</md-fab>
+		</a>
+	</section>
+</body>
+
+</html>
