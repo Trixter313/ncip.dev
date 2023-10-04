@@ -9,9 +9,6 @@
 	--md-icon-button-hover-icon-color: var(--md-sys-color-primary);
 	--md-icon-button-focus-icon-color: var(--md-sys-color-primary);
 	--md-icon-button-pressed-icon-color: var(--md-sys-color-primary);
-
-	--mdc-theme-primary: var(--md-sys-color-primary);
-	--mdc-typography-font-family: 'Roboto Flex', sans-serif;
 }
 
 .md-headline-small {
@@ -90,9 +87,7 @@ h5 {
 }
 
 .divider-right {
-	border-style: solid;
-	border-width: 0 1px 0 0;
-	border-color: var(--md-divider-color);
+	border-right: 1px solid var(--md-sys-color-outline-variant);
 }
 
 a {
@@ -136,9 +131,7 @@ a {
 	}
 
 	.divider-left {
-		border-style: solid;
-		border-width: 0 0 0 1px;
-		border-color: var(--md-divider-color);
+		border-left: 1px solid var(--md-sys-color-outline-variant);
 	}
 }
 
