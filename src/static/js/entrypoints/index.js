@@ -1,6 +1,5 @@
 import '../components/myHeader';
 import '@material/web/button/text-button.js';
-import '@material/web/switch/switch.js';
 import '@material/web/fab/fab.js';
 import '@material/web/icon/icon.js';
 import '@material/web/divider/divider.js';

@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit';
 import '@material/web/tabs/tabs.js';
 import '@material/web/tabs/primary-tab.js';
+import '@material/web/switch/switch.js';
 import '@material/web/elevation/elevation.js';
 
 export class MyHeader extends LitElement {
@@ -16,6 +17,7 @@ export class MyHeader extends LitElement {
 			position: fixed;
 			width: 100%;
 			--md-elevation-level: 0;
+			container-type: inline-size;
 		}
 
 		header {
@@ -34,7 +36,10 @@ export class MyHeader extends LitElement {
 		}
 
 		h1 {
-			font-size: var(--md-sys-typescale-display-medium-font-size);
+			font-size: var(--md-sys-typescale-headline-large-font-size);
+			font-weight: var(--md-sys-typescale-headline-large-font-weight);
+			line-height: var(--md-sys-typescale-headline-large-line-height);
+			letter-spacing: var(--md-sys-typescale-headline-large-letter-spacing);
 			padding-left: 15px;
 		}
 
@@ -56,9 +61,19 @@ export class MyHeader extends LitElement {
 			--md-elevation-level: 0;
 		}
 
-	#tabBarContainer {
-		background-color: var(--md-sys-color-background);
-	}
+		#tabBarContainer {
+			background-color: var(--md-sys-color-background);
+		}
+
+		@container (max-width: 600px) {
+			h1 {
+				padding-left: 0;
+			}
+			
+			md-tabs {
+				padding-right: 0;
+			}
+		}
 	`;
 
 	constructor() {
