@@ -320,7 +320,7 @@ const lt=s`:host{--_disabled-selected-handle-color: var(--md-switch-disabled-sel
 		}
 
 		#rightItems {
-			display: none;
+			display: flex;
 			align-items: center;
 		}
 
