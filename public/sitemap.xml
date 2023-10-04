@@ -5,18 +5,18 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://ncip.dev/</loc>
-  <lastmod>2020-04-30T02:57:42+00:00</lastmod>
+  <loc>https://cip.dev/</loc>
+  <lastmod>2023-10-04T09:34:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://ncip.dev/school/vrpertable/</loc>
-  <lastmod>2020-04-30T02:57:42+00:00</lastmod>
+  <loc>https://cip.dev/school/vrpertable/index.html</loc>
+  <lastmod>2023-10-04T09:34:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ncip.dev/revuc16/</loc>
-  <lastmod>2020-04-30T02:57:42+00:00</lastmod>
+  <loc>https://cip.dev/revuc16/index.html</loc>
+  <lastmod>2023-10-04T09:34:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 </urlset>
