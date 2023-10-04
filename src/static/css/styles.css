@@ -70,10 +70,6 @@ body {
 	display: flex;
 }
 
-.mdc-typography--headline5 {
-	margin: 0 0 10px 0;
-}
-
 h4 {
 	margin: 10px 0;
 }
@@ -145,39 +141,6 @@ a {
 	}
 }
 
-/* Header */
-.mdc-top-app-bar__title {
-	margin-bottom: 30px;
-}
-
-.mdc-switch-label {
-	padding-right: 5px;
-	padding-top: 5px;
-}
-
-label[for="darkModeToggler"] md-icon {
-	font-size: 40px;
-	width: 40px;
-	height: 40px;
-}
-
-#tabBarContainer {
-	background-color: var(--md-sys-color-surface);
-}
-
-#tabBar {
-	max-width: 400px;
-}
-
-.mdc-tab__text-label {
-	font-size: 0.875rem;
-	font-weight: 500;
-}
-
-.mdc-tab__content {
-	--mdc-theme-primary: #004ba0;
-}
-
 /* Home Tab */
 .mdc-card__media {
 	display: flex;
@@ -227,7 +190,7 @@ label[for="darkModeToggler"] md-icon {
 	align-items: center;
 }
 
-#rpsCard .mdc-typography--headline5 {
+#rpsCard h3 {
 	padding-top: 7px
 }
 
