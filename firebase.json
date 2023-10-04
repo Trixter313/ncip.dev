@@ -3,9 +3,14 @@
     "public": "public",
     "ignore": [
       "firebase.json",
+      "rollup.config.mjs",
+      "package.json",
+      "package-lock.json",
+      "web-dev-server.config.mjs",
       "**/.*",
       "**/node_modules/**",
-      "**/workspace",
+      "**/src",
+      "**/dist",
       "**/archive",
       "**/deploy.*"
     ],
