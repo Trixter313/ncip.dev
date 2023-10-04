@@ -44,7 +44,7 @@ export class MyHeader extends LitElement {
 		}
 
 		#rightItems {
-			display: none;
+			display: flex;
 			align-items: center;
 		}
 

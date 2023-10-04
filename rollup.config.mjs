@@ -55,8 +55,18 @@ const config = {
 					dest: 'dist/static/audio',
 				},
 				{
-					src: ['src/static/css/*'],
+					src: ['src/static/css/*.css'],
 					dest: 'dist/static/css',
+					transform: async (contents, filename) => {
+						return (await postcss([minifyCSS()]).process(contents)).css;
+
+						// everything else
+						return contents;
+					},
+				},
+				{
+					src: ['src/static/css/material-theme/*'],
+					dest: 'dist/static/css/material-theme',
 					transform: async (contents, filename) => {
 						return (await postcss([minifyCSS()]).process(contents)).css;
 
