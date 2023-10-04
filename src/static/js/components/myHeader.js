@@ -7,7 +7,7 @@ export class MyHeader extends LitElement {
 
 	static properties = {
 		title: { type: String },
-		activeTabIndex: { type: Number },
+		// activeTabIndex: { type: Number },
 	};
 
 	static styles = css`
@@ -34,7 +34,7 @@ export class MyHeader extends LitElement {
 		}
 
 		h1 {
-			font-size: var(--md-sys-typescale-display-medium-size);
+			font-size: var(--md-sys-typescale-display-medium-font-size);
 			padding-left: 15px;
 		}
 
@@ -64,6 +64,7 @@ export class MyHeader extends LitElement {
 	constructor() {
 		super();
 		this.title = "Title";
+		// this.activeTabIndex = 0;
 	}
 
 	render() {
@@ -79,16 +80,19 @@ export class MyHeader extends LitElement {
 						<md-switch id="darkModeToggler" aria-label="Toggle site dark mode"></md-switch>
 					</div>
 				</div>
-				<md-tabs @change="${this.bubbleChange}">
+				<md-tabs @change="${this._bubbleChange}" activeTabIndex=${this.activeTabIndex}>
 					<slot></slot>
 				</md-tabs>
 			</header>
 		`;
 	};
 
-	bubbleChange() {
-		const changeEvent = new Event('change', { bubbles: true, composed: true });
-		changeEvent.activeTabIndex = this.target.activeTabIndex;
+	_bubbleChange(e) {
+		const changeEvent = new Event('change', {
+			bubbles: true,
+			composed: true
+		});
+		changeEvent.activeTabIndex = e.target.activeTabIndex;
 		this.dispatchEvent(changeEvent);
 	}
 }

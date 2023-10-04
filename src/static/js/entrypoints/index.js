@@ -21,10 +21,8 @@ if ("serviceWorker" in navigator) {
 
 const header = document.getElementsByTagName("my-header")[0];
 let panels = document.querySelectorAll('[role="tabpanel"]');
-header.addEventListener('change', (event) => {
-	console.log("JNDJNWI");
-	let activeTabIndex = event.target.activeTabIndex;
-	console.log(activeTabIndex);
+header.addEventListener('change', (e) => {
+	let activeTabIndex = e.activeTabIndex;
 	let tabs = header.children;
 
 	for (let i = 0; i < tabs.length; i++) {
@@ -40,7 +38,8 @@ let backgroundMusic
 const toggleBackgroundMusicFAB = document.getElementById("toggleBackgroundMusicFAB");
 toggleBackgroundMusicFAB.addEventListener("click", function () {
 	if (typeof backgroundMusic == "undefined") {
-		backgroundMusic = new Audio("static/audio/bensound-memories.mp3");
+		backgroundMusic = new Audio("static/audio/holiday-is-coming-11852.mp3");
+		backgroundMusic.volume = 0.15;
 	}
 	const musicOnIcon = document.getElementById("backgroundMusicOn");
 	const musicOffIcon = document.getElementById("backgroundMusicOff");
@@ -140,13 +139,13 @@ let rpsLoseSound
 let rpsTieSound
 
 const gameTab = document.getElementById("gameTab");
-// gameTab.addEventListener("click", function () {
-// 	if (typeof rpsWinSound === "undefined") {
-// 		rpsWinSound = new Audio("static/audio/Trill.ogg");
-// 		rpsLoseSound = new Audio("static/audio/Clink.ogg");
-// 		rpsTieSound = new Audio("static/audio/Strum.ogg");
-// 	}
-// });
+gameTab.addEventListener("click", function () {
+	if (typeof rpsWinSound === "undefined") {
+		rpsWinSound = new Audio("static/audio/hero_simple-celebration-02.ogg");
+		rpsLoseSound = new Audio("static/audio/state-change_confirm-down.ogg");
+		rpsTieSound = new Audio("static/audio/notification_ambient.ogg");
+	}
+});
 
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
