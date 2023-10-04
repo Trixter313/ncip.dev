@@ -18,12 +18,22 @@
 		content="Nick's Playground is a place for me to practice my programming and problem solving skills. I host many projects here that you are free to browse.">
 
 	<link rel="manifest" href="manifest.json" />
+	<link href="static/css/material-theme/theme.css" type="text/css"
+		rel="stylesheet preload preconnect dns-prefetch" as="style">
 	<link href="static/css/material-components-web.min.css" type="text/css"
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-		rel="stylesheet preload preconnect dns-prefetch" as="style">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,700&display=swap"
+		rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+		rel="stylesheet preload preconnect dns-prefetch" as="style"> -->
 	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@20..48,100..700,0..1"
 		rel="stylesheet preload preconnect dns-prefetch" as="style">
+
 	<link href="static/css/styles.css" rel="stylesheet" type="text/css">
 
 	<meta name="application-name" content="Nick's Playground">
@@ -43,30 +53,13 @@
 	<script type="module" src="static/js/entrypoints/index.js"></script>
 </head>
 
-<body class="mdc-theme--background">
-	<header id="topAppBar" class="mdc-top-app-bar mdc-top-app-bar--prominent mdc-top-app-bar--fixed mdc-theme--on-primary"
-		data-mdc-auto-init="MDCTopAppBar">
-		<div class="mdc-top-app-bar__row">
-			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-				<h1 class="mdc-top-app-bar__title mdc-typography--headline4">Nick's Playground</h1>
-			</section>
-			<section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-				<label for="darkModeToggler" class="mdc-typography mdc-theme--on-primary mdc-switch-label">
-					<md-icon>dark_mode</md-icon>
-				</label>
-				<md-switch id="darkModeToggler" aria-label="Toggle site dark mode"></md-switch>
-			</section>
-		</div>
-	</header>
-	<div id="tabBarContainer">
-		<md-tabs id="tabBar">
-			<md-primary-tab id="homeTab" aria-controls="homePanel">Home</md-primary-tab>
-			<md-primary-tab id="gameTab" aria-controls="gamePanel">Games</md-primary-tab>
-			<md-primary-tab id="todoTab" aria-controls="todoPanel">To-Do</md-primary-tab>
-		</md-tabs>
-	</div>
-
-	<section id="homePanel" class="mdc-layout-grid mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+<body>
+	<my-header title="Nick's Playground">
+		<md-primary-tab id="homeTab" aria-controls="homePanel">Home</md-primary-tab>
+		<md-primary-tab id="gameTab" aria-controls="gamePanel">Games</md-primary-tab>
+		<md-primary-tab id="todoTab" aria-controls="todoPanel">To-Do</md-primary-tab>
+	</my-header>
+	<section id="homePanel" class="mdc-layout-grid" role="tabpanel"
 		aria-labelledby="homeTab">
 
 		<div class="mdc-layout-grid__inner">
@@ -76,12 +69,13 @@
 					<md-elevation></md-elevation>
 					<div
 						class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-card__media mdc-card__media--square">
+						<img class="card-media" src="static/img/logo.svg">
 						<!-- <md-tooltip>This is a vector image - it uses math to create a picture!</md-tooltip> -->
 					</div>
 					<div
 						class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-5-tablet divider-left">
 						<div class="mdc-card-content">
-							<h3 class="mdc-typography mdc-theme--on-surface mdc-typography--headline5">Welcome!</h3>
+							<h3 class="mdc-typography mdc-typography--headline5">Welcome!</h3>
 							<p class="mdc-typography  mdc-typography--body2">This is a space for me to experiment and host my
 								projects. If you have any suggestions, tell me!<br>Also, check out that sweet vector image on the left!
 							</p>
@@ -146,7 +140,9 @@
 							as a hobby. It's fun to work your way through issues you will inevitably encounter and learn
 							something new in the process!</p>
 					</div>
-					<div class="mdc-card__media mdc-card__media--square"></div>
+					<div class="mdc-card__media">
+						<img class="card-media" src="static/img/profile.webp">
+					</div>
 				</div>
 			</section>
 
@@ -154,7 +150,9 @@
 				<md-elevation></md-elevation>
 				<div class="mdc-layout-grid__inner mdc-card-content">
 					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop flex">
-						<div class="mdc-card__media mdc-card__media--square"></div>
+						<div class="mdc-card__media">
+							<img class="card-media" src="static/img/harper.webp">
+						</div>
 						<div>
 							<h4 class="mdc-typography mdc-typography--subtitle2">Doggo</h4>
 							<p class="mdc-typography mdc-typography--body2">Here's a picture of my dog, Harper!</p>
@@ -175,7 +173,7 @@
 
 	</section>
 
-	<section id="gamePanel" class="hidden mdc-layout-grid mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+	<section id="gamePanel" class="hidden mdc-layout-grid" role="tabpanel"
 		aria-labelledby="gameTab">
 
 		<div class="mdc-layout-grid__inner">
@@ -214,7 +212,7 @@
 
 	</section>
 
-	<section id="todoPanel" class="hidden mdc-layout-grid mdc-theme--background mdc-theme--on-surface" role="tabpanel"
+	<section id="todoPanel" class="hidden mdc-layout-grid" role="tabpanel"
 		aria-labelledby="todoTab">
 
 		<div class="mdc-layout-grid__inner">

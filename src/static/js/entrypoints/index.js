@@ -1,6 +1,4 @@
-import '@material/web/tabs/tabs.js';
-import '@material/web/tabs/primary-tab.js';
-import '@material/web/tabs/secondary-tab.js';
+import '../components/myHeader';
 import '@material/web/button/text-button.js';
 import '@material/web/switch/switch.js';
 import '@material/web/fab/fab.js';
@@ -9,7 +7,6 @@ import '@material/web/divider/divider.js';
 import '@material/web/elevation/elevation.js';
 import '@material/web/iconbutton/icon-button.js';
 
-// function startup() {
 if ("serviceWorker" in navigator) {
 	window.addEventListener("load", function () {
 		navigator.serviceWorker
@@ -22,11 +19,13 @@ if ("serviceWorker" in navigator) {
 	});
 }
 
-const MDTabs = document.getElementById("tabBar");
+const header = document.getElementsByTagName("my-header")[0];
 let panels = document.querySelectorAll('[role="tabpanel"]');
-MDTabs.addEventListener('change', () => {
-	let activeTabIndex = MDTabs.activeTabIndex
-	let tabs = MDTabs.children;
+header.addEventListener('change', (event) => {
+	console.log("JNDJNWI");
+	let activeTabIndex = event.target.activeTabIndex;
+	console.log(activeTabIndex);
+	let tabs = header.children;
 
 	for (let i = 0; i < tabs.length; i++) {
 		if (i == activeTabIndex) {
@@ -36,9 +35,6 @@ MDTabs.addEventListener('change', () => {
 		}
 	}
 });
-// }
-
-// startup();
 
 let backgroundMusic
 const toggleBackgroundMusicFAB = document.getElementById("toggleBackgroundMusicFAB");
@@ -115,39 +111,42 @@ switch (localStorage.getItem("lastUsedTheme")) {
 		setDarkTheme();
 		break;
 
+	case "light":
+		break;
+
 	default:
 		console.log("There was an error setting the page theme on load.");
 		break;
 }
 
-darkModeToggler.addEventListener("click", function () {
-	const currentColor = getComputedStyle(document.documentElement).getPropertyValue("--mdc-theme-background");
-	// const hrs =
-	if (currentColor === "#fafafa") {
-		setDarkTheme();
-		localStorage.setItem("lastUsedTheme", "dark");
-		console.log("Switched to dark mode.");
-	} else if (currentColor === "#121212") {
-		setLightTheme();
-		localStorage.setItem("lastUsedTheme", "light");
-		console.log("Switched to light mode.");
-	} else {
-		console.log("Something went wrong with toggling the color scheme.");
-	}
-});
+// darkModeToggler.addEventListener("click", function () {
+// 	const currentColor = getComputedStyle(document.documentElement).getPropertyValue("--mdc-theme-background");
+// 	// const hrs =
+// 	if (currentColor === "#fafafa") {
+// 		setDarkTheme();
+// 		localStorage.setItem("lastUsedTheme", "dark");
+// 		console.log("Switched to dark mode.");
+// 	} else if (currentColor === "#121212") {
+// 		setLightTheme();
+// 		localStorage.setItem("lastUsedTheme", "light");
+// 		console.log("Switched to light mode.");
+// 	} else {
+// 		console.log("Something went wrong with toggling the color scheme.");
+// 	}
+// });
 
 let rpsWinSound
 let rpsLoseSound
 let rpsTieSound
 
 const gameTab = document.getElementById("gameTab");
-gameTab.addEventListener("click", function () {
-	if (typeof rpsWinSound === "undefined") {
-		rpsWinSound = new Audio("static/audio/Trill.ogg");
-		rpsLoseSound = new Audio("static/audio/Clink.ogg");
-		rpsTieSound = new Audio("static/audio/Strum.ogg");
-	}
-});
+// gameTab.addEventListener("click", function () {
+// 	if (typeof rpsWinSound === "undefined") {
+// 		rpsWinSound = new Audio("static/audio/Trill.ogg");
+// 		rpsLoseSound = new Audio("static/audio/Clink.ogg");
+// 		rpsTieSound = new Audio("static/audio/Strum.ogg");
+// 	}
+// });
 
 const rockButton = document.getElementById("rockButton");
 const paperButton = document.getElementById("paperButton");
