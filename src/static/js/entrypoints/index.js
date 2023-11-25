@@ -93,7 +93,7 @@ function setDarkTheme() {
 	newColors("#121212", "#1d1d1d", "rgba(255,255,255,.87)", "rgba(255, 255, 255, 0.15)", "rgba(255,255,255,.6)");
 }
 
-const darkModeToggler = document.getElementById("darkModeToggler");
+// const darkModeToggler = document.getElementById("darkModeToggler");
 
 // Set theme to dark if no option in cache and user prefers dark or if dark was their last selected theme
 switch (localStorage.getItem("lastUsedTheme")) {
